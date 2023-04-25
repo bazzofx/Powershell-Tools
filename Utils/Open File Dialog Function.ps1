@@ -1,6 +1,8 @@
 ﻿Add-Type -AssemblyName System.Windows.Forms
 $userProfile = $env:USERPROFILE
 $Path ="$userProfile\Downloads"
+$global:filePath = ""
+function OpenFile{
         
         $FileDialogObject = [System.Windows.Forms.OpenFileDialog]
  # Create Object and add properties
@@ -16,5 +18,9 @@ $Path ="$userProfile\Downloads"
         $OpenFileDialog.ShowDialog()
 
         if ($openFileDialog.CheckFileExists -eq $true) {
-            $filePath = $openFileDialog.FileName
-            Write-Host $filePath}
+            $filePath = $openFileDialog.FileName}
+        $global:filePath =  $filePath
+        }
+OpenFile
+$data = Import-Csv $global:filePath
+$data

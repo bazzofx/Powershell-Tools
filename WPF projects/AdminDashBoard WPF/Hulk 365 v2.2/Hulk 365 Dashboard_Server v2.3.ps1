@@ -97,9 +97,85 @@ Else{$session = New-PSSession azdc01 -Credential (Get-Credential)
 Enter-PSSession $session}
 return
 }
+function changeUPN_AD {
+$currentErrorActionPreference = $ErrorActionPreference
+$ErrorActionPreference = "Stop"
+
+forEach ($user in $global:users)
+        {
+	    #Read user data from each field in each row and assign the data to a variable as below
+	    $UserPrincipalName 	= $user.UserPrincipalName
+	    $NewUserPrincipalName 	= $user.NewUserPrincipalName
+        $userLogin = $user.Login
+            $pieces = $userLogin.Split(".")
+        $name = $pieces[0] + " " + $pieces[1]
+        $surname = $pieces[1]
+       
+        
+
+Try{           	
+        Get-ADUser -Filter "userPrincipalName -eq '$UserPrincipalName'" -Properties *| 
+        Set-ADUser -EmailAddress $NewUserPrincipalName -UserPrincipalName $NewUserPrincipalName -Surname $surname -SamAccountName $userLogin -DisplayName $name
+Write-Host $name -ForegroundColor Yellow
+Write-Host @"
+[SUCCESS] Properties Updated
+            Last Name: $surname
+            Display Name: $name
+            Email: $UserPrincipalName
+            Login $userLogin
+            User Principal Name: $UserPrincipalName
+-   -   -   -   -   -   -   -   -   -   -   -   
+"@ -ForegroundColor Green
+    }#--close Try
+Catch{Write-Host "[ERROR] Please run this application as an Administrator" -ForegroundColor Red}
+        }
+$ErrorActionPreference = $currentErrorActionPreference
+} #-- subFunction close function changeUPNAD  # change properties on user on AZDC01
+function changeUPN_365 {
+Clear-Host
+checkConnection
+
+Add-Content $logGood "----------- UNLOCKING ACCOUNT SUCCESS LOG START --------------"
+Add-Content $logBad "----------- UNLOCKING ACCOUNT EXCEPTION LOG START --------------"   
+ 
+    foreach($row in $global:users){$i+=1}  #counts how many records exist on .csv file
+    if($i -gt 1) { #to give errors in case user does not select .csv file
+
+        $count =0
+        ForEach ($row in $global:users)
+            {
+            $currentRowLogin = $global:users.Login[$count]
+            $currentRowPassword = $global:users.Password[$count]
+            $currentRowEmail = $global:users.UserPrincipalName[$count]
+            $NewUserPrincipalName = $global:users.NewUserPrincipalName[$count]
+            Write-Host $currentRowEmail
+            Try{
+            
+            Set-MsolUserPrincipalName -UserPrincipalName $UserPrincipalName -NewUserPrincipalName $NewUserPrincipalName
+
+
+            Add-Content $logGood "[SUCCESS] - $currentRowEmail has been UNLOCKED"
+            }
+            Catch [System.Exception] {Write-Host "[ERROR] Please run this application as an Administrator"}
+            Catch {Write-Host "[ERROR] - Something went wrong while CHANGING EMAIL $currentRowEmail" -ForegroundColor Red
+                   Write-Host "[ERROR] Please run this application as an Administrator" -ForegroundColor Red
+                   Add-Content $logBad "[ERROR] - Something went wrong while CHANGING EMAIL $currentRowEmail"        
+                    }
+            $count += 1
+            Write-Host "$currentRowEmail has been updated to : $NewUserPrincipalName" -ForegroundColor Green
+            } # -Close ForLoop
+            Add-Content $logGood "----------- CHANGING EMAIL ACCOUNT SUCCESS LOG ENDS --------------"
+            Add-Content $logGood ""
+            Add-Content $logBad "----------- CHANGING EMAIL EXCEPTION LOG ENDS --------------"
+            Add-Content $logBad ""
+            Write-Host "          UPN has been successfully updated          " -ForegroundColor Black -BackgroundColor Green
+        } #close if
+    Else{Write-Host "[ERROR] Please select the .csv file to use." -ForegroundColor White -BackgroundColor Red}
+ 
+} #-- subFunction close function changeUPN365
+
 #------------RUN SUB FUNCTIONS-------------
 Clear-Host
-
 #---------------------------------------
 
 function startLogin {
@@ -128,9 +204,7 @@ $ErrorActionPreference = "SilentlyContinue"
 
 
                      #reset on 365
-                     Set-MsOlUserPassword -UserPrincipalName $currentRowEmail -NewPassword $currentRowPassword -ForceChangePassword $True -ForceChangePasswordOnly $true
-                     $RefreshTokensValidFrom = get-date
-                     Set-MsolUser -UserPrincipalName $currentRowEmail –StsRefreshTokensValidFrom $RefreshTokensValidFrom
+                     Set-MsOlUserPassword -UserPrincipalName $currentRowEmail  -ForceChangePassword $True -NewPassword $currentRowPassword
                      #reset on AZDC01 Server
                      Write-Host " The password for $currentRowEmail has been reset on MS365 to ---> |  $currentRowPassword" -ForegroundColor Green
                      $accountName = get-aduser -Filter "UserPrincipalName -eq  '$currentRowEmail'"|
@@ -155,14 +229,14 @@ Add-Content $logGood "----------- UNLOCKING ACCOUNT SUCCESS LOG START ----------
 Add-Content $logBad "----------- UNLOCKING ACCOUNT EXCEPTION LOG START --------------"   
  
     foreach($row in $global:users){$i+=1}  #counts how many records exist on .csv file
-    if($i -gt 1) { #to give errors in case user does not select .csv file
+    if($i -ge 1) { #to give errors in case user does not select .csv file
 
-        $count =0
+
         ForEach ($row in $global:users)
             {
-            $currentRowLogin = $global:users.Login[$count]
-            $currentRowPassword = $global:users.Password[$count]
-            $currentRowEmail = $global:users.UserPrincipalName[$count]
+            $currentRowLogin = $row.Login
+            $currentRowPassword = $row.Password
+            $currentRowEmail = $row.UserPrincipalName
             Write-Host $currentRowEmail
             Try{
             Set-Msoluser -UserPrincipalName $currentRowEmail -BlockCredential $false -ErrorAction SilentlyContinue
@@ -176,7 +250,7 @@ Add-Content $logBad "----------- UNLOCKING ACCOUNT EXCEPTION LOG START ---------
             Catch {Write-Host "[ERROR] - Something went wrong while UNLOCKING $currentRowEmail" -ForegroundColor Red
             Add-Content $logBad "[ERROR] - Something went wrong while UNLOCKING $currentRowEmail"        
             }
-            $count += 1
+
 
             } # -Close ForLoop
             Add-Content $logGood "----------- UNLOCKING ACCOUNT SUCCESS LOG ENDS --------------"
@@ -197,13 +271,12 @@ checkConnection
         Add-Content $logBad ""
 
         foreach($row in $global:users){$i+=1}  #counts how many records exist on .csv file
-        if($i -gt 1) { #to give errors in case user does not select .csv file
-        $count = 0
+        if($i -ge 1) { #to give errors in case user does not select .csv file
         ForEach ($row in $global:users)
             {
-            $currentRowLogin = $global:users.Login[$count]
-            $currentRowPassword = $global:users.Password[$count]
-            $currentRowEmail = $global:users.UserPrincipalName[$count]
+            $currentRowLogin = $row.Login
+            $currentRowPassword = $row.Password
+            $currentRowEmail = $row.UserPrincipalName
             $license = $global:license
 
             Try{
@@ -220,7 +293,7 @@ checkConnection
 
         Add-Content $logBad "[ERROR] - Something went when attemption to add '$license' license to $currentRowEmail"
     }
-        $count+=1
+
 
         } #-close forLoop
 
@@ -233,47 +306,12 @@ checkConnection
         }#close if
     Else{Write-Host "[ERROR] You need to load the .csv file first." -ForegroundColor White -BackgroundColor Red}
         } #-- close function
-function changeUPN {
-Clear-Host
-checkConnection
-
-Add-Content $logGood "----------- UNLOCKING ACCOUNT SUCCESS LOG START --------------"
-Add-Content $logBad "----------- UNLOCKING ACCOUNT EXCEPTION LOG START --------------"   
- 
-    foreach($row in $global:users){$i+=1}  #counts how many records exist on .csv file
-    if($i -gt 1) { #to give errors in case user does not select .csv file
-
-        $count =0
-        ForEach ($row in $global:users)
-            {
-            $currentRowLogin = $global:users.Login[$count]
-            $currentRowPassword = $global:users.Password[$count]
-            $currentRowEmail = $global:users.UserPrincipalName[$count]
-            $NewUserPrincipalName = $global:users.NewUserPrincipalName[$count]
-            Write-Host $currentRowEmail
-            Try{
-            
-            Set-MsolUserPrincipalName -UserPrincipalName $UserPrincipalName -NewUserPrincipalName $NewUserPrincipalName
+function changeUPN{
+changeUPN_AD
+changeUPN_365
+} # --close function
 
 
-            Add-Content $logGood "[SUCCESS] - $currentRowEmail has been UNLOCKED"
-            }
-            Catch [System.Exception] {Write-Host ""}
-            Catch {Write-Host "[ERROR] - Something went wrong while CHANGING EMAIL $currentRowEmail" -ForegroundColor Red
-            Add-Content $logBad "[ERROR] - Something went wrong while CHANGING EMAIL $currentRowEmail"        
-            }
-            $count += 1
-            Write-Host "$currentRowEmail has been updated to : $NewUserPrincipalName" -ForegroundColor Green
-            } # -Close ForLoop
-            Add-Content $logGood "----------- CHANGING EMAIL ACCOUNT SUCCESS LOG ENDS --------------"
-            Add-Content $logGood ""
-            Add-Content $logBad "----------- CHANGING EMAIL EXCEPTION LOG ENDS --------------"
-            Add-Content $logBad ""
-            Write-Host "          UPN has been successfully updated          " -ForegroundColor Black -BackgroundColor Green
-        } #close if
-    Else{Write-Host "[ERROR] Please select the .csv file to use." -ForegroundColor White -BackgroundColor Red}
- 
-} #-- close function
 function generateCSV {
 $userProfile = $env:USERPROFILE
 $myDownload = "$userProfile\Downloads"
@@ -298,7 +336,7 @@ Catch{Write-Host "[ERROR] It could not generate sample.csv file" -ForegroundColo
       Write-Host "| UserPrincipalName | Login | Password | NewUserPrincipalName |" -ForegroundColor Green
 Write-Host      "name.surname@fitzroy.org | Name.Surname | xxx111lol | newName.newSurname@fitzroy.org |" -ForegroundColor Green
   }
-        }
+        } # --close function
 function lockAccount {
 Clear-Host
 checkConnection
@@ -307,13 +345,12 @@ Add-Content $logGood ""
 Add-Content $logBad "----------- BLOCKING ACCOUNT EXCEPTION LOG START --------------"
 Add-Content $logBad ""
         foreach($row in $global:users){$i+=1}  #counts how many records exist on .csv file
-        if($i -gt 1) { #to give errors in case user does not select .csv file
-        $count =0
+        if($i -ge 1) { #to give errors in case user does not select .csv file
         ForEach ($row in $global:users)
             {
-            $currentRowLogin = $global:users.Login[$count]
-            $currentRowPassword = $global:users.Password[$count]
-            $currentRowEmail = $global:users.UserPrincipalName[$count]
+            $currentRowLogin = $row.Login
+            $currentRowPassword = $row.Password
+            $currentRowEmail = $row.UserPrincipalName
         
             Try{
             Set-Msoluser -UserPrincipalName $currentRowEmail -BlockCredential $true
@@ -327,7 +364,6 @@ Add-Content $logBad ""
             Catch {Write-Host "[ERROR] - Something went while trying to BLOCK $currentRowEmail" -ForegroundColor Red
                                       Add-Content $logBad $Error[0]
                                       Add-Content $logBad "[ERROR] - Something went while trying to BLOCK $currentRowEmail"  }
-            $count += 1
             }#- Close ForLoop
             Add-Content $logGood "----------- BLOCKING ACCOUNT SUCCESS LOG ENDS --------------"
             Add-Content $logGood ""
@@ -338,7 +374,7 @@ Add-Content $logBad ""
         }
     Else{Write-Host "[ERROR] Please select the .csv file to use." -ForegroundColor white -BackgroundColor Red}
 } #-- close function
-function removeAllLicenses {
+function removeAllLicenses($global:users) {
 Clear-Host
 checkConnection
         Add-Content $logGood "----------- REMOVAL ALL LICENSES SUCCESS LOG START --------------"
@@ -347,9 +383,11 @@ checkConnection
         Add-Content $logBad ""    
         $errorUsers = @()
         
+For($j=1;$j -le 2;$j++) #run the loop twice, running once was not working correctly.
+{
   foreach($row in $global:users){$i+=1}  #counts how many records exist on .csv file
         
-    if($i -gt 1) { #to give errors in case user does not select .csv file
+    if($i -ge 1) { #to give errors in case user does not select .csv file
         $count = 0
         Write-host "$global:users" -ForegroundColor Yellow
             ForEach ($row in $global:users)
@@ -358,7 +396,7 @@ checkConnection
             $currentRowPassword = $row.Password
             $currentRowEmail = $row.UserPrincipalName
             $license = "FitzRoy:STANDARDWOFFPACK"
-    Try{        
+            Try{        
         (get-MsolUser -UserPrincipalName $currentRowEmail).licenses.AccountSkuId |
         foreach{Set-MsolUserLicense -UserPrincipalName $currentRowEmail -RemoveLicenses $_ -ErrorAction Stop
             Write-Host "[SUCCESS] - The Licenses from $currentRowEmail has been removed." -ForegroundColor yellow
@@ -371,8 +409,9 @@ checkConnection
             {Write-Host "[ERROR] $currentRowEmail" -ForegroundColor Yellow -BackgroundColor Black
             Write-Host "[ERROR] The license was not removed from $currentRowEmail`n Check if the UPN contain ending spaces and remove them from your .csv file" -ForegroundColor White -BackgroundColor Red
             Write-Host "<<< Check if License is provide via group/hierarchy conditions >>>"  -BackgroundColor Red -ForegroundColor White                                                                 
-            }   
-            Catch [System.Exception] {
+            }#close Catch   
+            Catch [System.Exception] 
+            {
                 
                 $user = $currentRowEmail
                 $errorUsers += $user
@@ -383,26 +422,29 @@ checkConnection
             Write-Host "<<< Check if License is provide via group/hierarchy conditions >>>"  -BackgroundColor Red -ForegroundColor White
             Write-Host ""
                                       }#close Catch
-
-            Catch {
+            Catch 
+            {
                 $user = $currentRowEmail
                 $errorUsers += $user
             Write-Host "[ERROR] - Something went wrong while removing licenses from $email" -ForegroundColor Red
             Add-Content $logBad $Error[0]
             Add-Content $logBad "[ERROR] The license was not removed from $currentRowEmail`n Check if the UPN contain ending spaces and remove them from your .csv file"
-    }
-           $count +=1
+    }#close Catch
     } # -- close ForEach
         Add-Content $logbad "USERS WHO FAILED TO REMVOVE LICENSES"
         Add-Content $logGood "----------- REMOVAL ALL LICENSES SUCCESS LOG END --------------"
         Add-Content $logGood ""
         Add-Content $logBad "----------- REMOVAL ALL LICENSES EXCEPTION LOG END --------------"
         Add-Content $logBad "" 
-        Write-Host "          ALL Licenses have now been removed from the accounts!          " -ForegroundColor Black -BackgroundColor Green
            
             
             }#close if
-    Else{Write-Host "[ERROR] Please select the .csv file to use." -ForegroundColor white -BackgroundColor red}
+    Else{Write-Host "[ERROR] Please select the .csv file to use." -ForegroundColor white -BackgroundColor red
+    }
+
+Write-Host "          ALL Licenses have now been removed from the accounts!          " -ForegroundColor Black -BackgroundColor Green
+
+}# For Close
         } #--close function
 function checkInactiveWithLicense {
 
@@ -414,8 +456,8 @@ Write-Host "This might take a a few minutes... but no more than 5 minutes!!" -Fo
 Get-MsolUser -all |
                 Where-Object{$_.UserPrincipalName -like "*fitzroy*"`
                 -or $_.UserPrincipalName -like "*love4life*"`
-                -and $_.islicensed -like "true"`
-                -and $_.blockcredential -like "true"} |`
+                -and $_.islicensed -eq "$true"`
+                -and $_.blockcredential -eq "$true"} |`
                 Select-Object UserPrincipalName, DisplayName, isLicensed, blockcredential
 Write-Host "-------------------------------------------------------------------------"
 Write-Host "                    ------- Search is now compelted -------           " -ForegroundColor Green
@@ -424,11 +466,11 @@ Write-Host "Users above are blocked but currently are holding at least one licen
 Catch{Write-Host "[ERROR] Something went wrong trying to get Inactive users with licenses"}
 
 
-}
+} # --close function
 
 
 
-### FORM DESIGN STARTS HERE
+###                          \_(*.*)_/ FORM DESIGN STARTS HERE \_(*.*)_/ 
 
 $FormObject = [System.Windows.Forms.Form]
 $LabelObject = [System.Windows.Forms.Label]
@@ -456,11 +498,11 @@ $window.backcolor = $bgcolor
 
     #Define Main Title of Program
 $lbl_title = New-Object $LabelObject
-$lbl_title.text = "[H.U.L.K] Hybrid User Lifecycle Kit v2.2"
+$lbl_title.text = "H.U.L.K Hybrid User Lifecycle Kit v2.3"
 $lbl_title.Autosize = $true
-$lbl_title.Font="Cambria,12,style=bold" ### --------------------------------------------font here
+$lbl_title.Font="Cambria,11,style=bold" ### --------------------------------------------font here
 $lbl_title.ForeColor = $red2Button
-$lbl_title.Location = New-Object system.drawing.point (35,5)
+$lbl_title.Location = New-Object system.drawing.point (5,5)
 
     #Define FilePath Label info
 $lbl_filePath = New-Object $LabelObject
@@ -609,7 +651,7 @@ Elseif ($rdn_Button3.Checked  -eq $true ) {addLicense}
 Elseif ($rdn_Button4.Checked  -eq $true ) {changeUPN}
 Elseif ($rdn_Button5.Checked  -eq $true ) {lockAccount }
 Elseif ($rdn_Button6.checked -eq $true)   {removeAllLicenses}
-Else {Write-Host "[ERROR] You are not yet connected to Office 365." -foreground Red} 
+Else {Write-Host "[ERROR] You are not yet connected to Office 365. - Please select an option." -foreground Red} 
  }#close function
 
 function checkConnected{
