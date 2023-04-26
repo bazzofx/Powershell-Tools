@@ -1,6 +1,6 @@
 ﻿#change for the working path directory of file
 ### Currently Working directory of script
-$wd= "C:\Users\Paulo.Bazzo\OneDrive - FitzRoy\Documents\FitzRoy\Github\Powershell Tools\Utils\Vlookup powershell" 
+$wd= "" 
 #-------------- CHANGE ME
 
 $filePath1 = "$wd\main.csv"
