@@ -8,15 +8,13 @@ $count =0
     if($count -eq $headersCount)
     {   $xmodified = '"' + $x + '"'
         $stringHeaders += $xmodified
-        #Write-Host "exception" -ForegroundColor Red
         }
     else{$xmodified = '"' + $x + '",'
         $stringHeaders += $xmodified
-        #Write-Host $count  -ForegroundColor Yellow
-        $xmodified}
+        }
 $count  += 1
     }#cls forEach
-return $stringHeaders
+#Write-host $stringHeaders -ForegroundColor Yellow
 
 }
 
