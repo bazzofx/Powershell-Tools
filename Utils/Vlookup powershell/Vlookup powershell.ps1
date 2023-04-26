@@ -1,4 +1,5 @@
-﻿$hash=@{} 
+﻿
+$hash=@{} 
  $height=import-csv *height*
  $weight=import-csv *weight*
  $weight|%{$hash[$_.nome]=$_."weight"}  
