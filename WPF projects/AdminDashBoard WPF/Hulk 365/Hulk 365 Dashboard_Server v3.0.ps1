@@ -470,7 +470,7 @@ Catch{Write-Host "[ERROR] Something went wrong trying to get Inactive users with
 
 
 
-###                          \_(*.*)_/ FORM DESIGN STARTS HERE \_(*.*)_/ 
+###-  -  -  -  -  -  -  -  - ... ... \_(*.*)_/ FORM DESIGN STARTS HERE \_(*.*)_/ ... ... -  -  -  -  -  -  -  -  -  -###
 
 $FormObject = [System.Windows.Forms.Form]
 $LabelObject = [System.Windows.Forms.Label]
