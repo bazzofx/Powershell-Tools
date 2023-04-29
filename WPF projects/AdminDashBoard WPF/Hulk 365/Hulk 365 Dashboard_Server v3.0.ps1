@@ -498,11 +498,11 @@ $window.backcolor = $bgcolor
 
     #Define Main Title of Program
 $lbl_title = New-Object $LabelObject
-$lbl_title.text = "H.U.L.K Hybrid User Lifecycle Kit v2.3"
+$lbl_title.text = "H.U.L.K Hybrid User Lifecycle Kit v3.0"
 $lbl_title.Autosize = $true
 $lbl_title.Font="Cambria,11,style=bold" ### --------------------------------------------font here
 $lbl_title.ForeColor = $red2Button
-$lbl_title.Location = New-Object system.drawing.point (5,5)
+$lbl_title.Location = New-Object system.drawing.point (12,5)
 
     #Define FilePath Label info
 $lbl_filePath = New-Object $LabelObject
