@@ -1,6 +1,9 @@
-﻿function combineTrentAnnualLeave {
+﻿function mergeRowbyGroup {
+     [CmdletBinding()]
+     Param([parameter(ValueFromRemainingArguments=$true)][String[]] $identifier,$mainNumber,$bonus)
+
 $wd = "C:\Users\Paulo.Bazzo\OneDrive - FitzRoy\Documents\FitzRoy\Github\Powershell Tools\Utils\GroupAddRowsCsv"
-$data = Import-Csv "$wd\data.csv"
+$data = Import-Csv "$wd\data.csv" | Sort-Object -Property $identifier
 $out = "$wd\Combined.csv"
 [double]$global:adjustment = $null
 $total= $null
@@ -12,13 +15,14 @@ ForEach($x in $data){
     $key = ""
     $nextRow = $currentRow + 1
     $previousRow = $currentRow - 1
-    $p = $data[$previousRow].'Salary identifier'
-    $c = $data[$currentRow].'Salary identifier'
-    $n = $data[$nextRow]."Salary identifier"
-    [double]$t = $data[$currentRow]."AnnualLeave_Trent"
-    [double]$adjRaw = $data[$currentRow]."AnnualLeave_Adjust"  
-    [double]$nextAdjRaw = $data[$nextRow]."AnnualLeave_Adjust"
-    [double]$prevAdjRaw = $data[$previousRow]."AnnualLeave_Adjust"
+    $p = $data[$previousRow].$identifier
+    $c = $data[$currentRow].$identifier
+    $n = $data[$nextRow].$identifier
+    [double]$t = $data[$currentRow].$mainNumber
+    [double]$adjRaw = $data[$currentRow].$bonus 
+    [double]$nextAdjRaw = $data[$nextRow].$bonus
+    [double]$prevAdjRaw = $data[$previousRow].$bonus
+    
       
     #------------------------------------------- LOCAL VARIABLES -----------------------------
           if ($c -ne $n){ #IF CURRENT ROW NOT EQUALS NEXT ROW
@@ -41,25 +45,26 @@ ForEach($x in $data){
 # ------------------- SUM FOR DUPLICATE ROWS START HERE ---------------------
           elseif($c -eq $n -or $p -eq $c -and $key -eq "") {
           $global:adjustment += $adjRaw;$key ="done";$total = $global:adjustment + $t
-           Write-Host "($c) - $global:adjustment + $t ---> $total" -ForegroundColor Magenta
-           #Write-Host $global:adjustment -ForegroundColor Magenta
+           Write-verbose "($c) - $global:adjustment + $t ---> $total"
+           Write-Debug "Finished running $c -eq $n OR $p -eq $c"
           #sleep 1
           }  
           if($p -eq $c -and $key -eq ""){$global:adjustment += $adjRaw; $total = $global:adjustment + $t; $key ="done"
 
-     $row | Add-Member -MemberType NoteProperty -Name "EmployeeID" -Value $c -Force
-     $row | Add-Member -MemberType NoteProperty -Name "TotalEntiTrent" -Value $total -Force
-     $array += $row
-           #Write-Host $global:adjustment -ForegroundColor cyan
-           #Write-Host "Previous row equals next row" -ForegroundColor Cyan
-           Write-Host "($c) - $global:adjustment  + $t ---> $total" -ForegroundColor Cyan
-           #Write-Host "($p) - $prevAdjRaw  + $t ---> $total" -ForegroundColor Red
-           #Write-Host "($n) - $nextAdjRaw  + $t ---> $total" -ForegroundColor Green
+     $row | Add-Member -MemberType NoteProperty -Name "EmployeeID" -Value $c -Force # very important to use the -force flag to override value
+     $row | Add-Member -MemberType NoteProperty -Name "TotalEntiTrent" -Value $total -Force # very important to use the -force flag to override value
+     ###$array += $row ######## Dont need to create a new row here
+           Write-Debug $global:adjustment 
+           Write-Debug "Previous row equals next row"
+           Write-verbose "($c) - $global:adjustment + $t ---> $total"
+           Write-Host "Records created with the following : ($c) - Bonus($global:adjustment)  + $t ---> $total" -ForegroundColor Green
+           Write-Debug "($p) - $prevAdjRaw  + $t ---> $total"
+           Write-Debug "($n) - $nextAdjRaw  + $t ---> $total"
 
           #sleep 5
           }
           elseif($adj -eq ""){$total = + $t}
-          if($c -ne $n){$global:adjustment =""}else{}
+          if($c -ne $n){$global:adjustment ="";Write-Verbose "Global:Adjustment set back to 0 --> value : $global:adjustment"}else{}
                  
  
 
@@ -73,3 +78,9 @@ ForEach($x in $data){
 $array | Export-Csv -Path $out -NoTypeInformation   
 
     }
+
+mergeRowbyGroup -identifier Name -mainNumber Salary -bonus Bonus
+
+mergeRowbyGroup -identifier Name -mainNumber Salary -bonus Bonus -Debug
+
+mergeRowbyGroup -identifier Name -mainNumber Salary -bonus Bonus -Verbose
