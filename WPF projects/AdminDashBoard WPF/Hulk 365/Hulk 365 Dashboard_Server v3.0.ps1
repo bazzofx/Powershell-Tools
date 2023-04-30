@@ -6,7 +6,7 @@ $ErrorActionPreference = "silentlycontinue"
 $userProfile = $env:USERPROFILE
 $license = "FitzRoy:STANDARDWOFFPACK"
 
-$logPath = "C:\iMsScripts\HULK 365\"
+$logPath = "C:\iMsScripts\HULK 365\reports\"
 $logGoodFile = "SUCCESS $(get-date -f dd-MM-yyy).log"
 $logBadFile = "EXCEPTIONS $(get-date -f dd-MM-yyy).log"
 $logGood = $logPath + $logGoodFile
@@ -44,7 +44,6 @@ function loadCSV{
  $global:users = Import-CSV $filePath -Header "UserPrincipalName", "Login", "Password","NewUserPrincipalName" |
                                                         Where-Object{$_.UserPrincipalName -ne "UserPrincipalName"}
  Write-Host "[SUCCESS] Data files loaded successfully" -ForegroundColor Green
- Write-Host $global:users
   }
   Catch{Write-Host "[WARNING] Failed to import data" -ForegroundColor red }
                   } #-- close function
@@ -192,7 +191,13 @@ function resetPass365{
 Clear-Host
 checkConnection
 $currentErrorAction = $ErrorActionPreference
-$ErrorActionPreference = "SilentlyContinue"
+$ErrorActionPreference = "Stop"
+$badUsers = @()
+
+        Add-Content $logGood "----------- RESET PASSWORD SUCCESS LOG START --------------"
+        Add-Content $logGood ""
+        Add-Content $logBad "----------- RESET PASSWORD EXCEPTION LOG START --------------"
+        Add-Content $logBad "" 
 
     foreach($row in $global:users){$i+=1}  #counts how many records exist on .csv file
     if($i -ge 1) { #to give errors in case user does not select .csv file
@@ -204,22 +209,31 @@ $ErrorActionPreference = "SilentlyContinue"
                 $currentRowPassword = $row.Password
                 $currentRowEmail = $row.UserPrincipalName
 
-
+                Try{
                      #reset on 365
                      Set-MsOlUserPassword -UserPrincipalName $currentRowEmail  -ForceChangePassword $True -NewPassword $currentRowPassword
                      #reset on AZDC01 Server
-                     Write-Host " The password for $currentRowEmail has been reset on MS365 to ---> |  $currentRowPassword" -ForegroundColor Green
                      $accountName = get-aduser -Filter "UserPrincipalName -eq  '$currentRowEmail'"|
                      Set-ADAccountPassword -Reset -NewPassword (ConvertTo-SecureString $currentRowPassword -AsPlainText -Force)
-                     Write-Host " The password for $currentRowEmail has been reset on AZDC01 to ---> |  $currentRowPassword" -ForegroundColor White -BackgroundColor Green
+                     Write-Host "[SUCCESS] The password for $currentRowEmail has been reset on AZDC01 to ---> |  '$currentRowPassword'" -ForegroundColor Green
                      Write-Host "Changes may take up to 30mins to propagate..." -ForegroundColor Yellow
-                     Write-Host "---------------------------" -ForegroundColor Yellow
-                 
+                     Write-Host "----------------------------------------------" -ForegroundColor Yellow
+                     Add-Content $logGood "[SUCCESS] $currentRowEmail"
+                 }
+                 Catch{
+                 $badUsers += $currentRowEmail
+                 Write-Host "[ERROR] '$currentRowEmail' - Please check name." -ForegroundColor Red
+                       Add-Content $logBad "[FAIL] $currentRowEmail"
+                        }
      
                 } # --close ForLoop
-Write-Host "          Passwords have been updated successfully!          " -ForegroundColor Black -BackgroundColor Green
+if($badUsers = ""){
+Write-Host "          Passwords have been updated successfully!          " -ForegroundColor Black -BackgroundColor Green}
+else{Write-Host "[INFO] - Reset password complete successfully, but there are some exceptions!" -BackgroundColor Yellow -ForegroundColor Black}
             }#close Try
     Else{Write-Host "[ERROR] Please select the .csv file to use." -ForegroundColor White -BackgroundColor Red}
+        Add-Content $logGood "------------------------------------------------------------"
+        Add-Content $logBad  "------------------------------------------------------------"
 $ErrorActionPreference = $currentErrorAction
 } #-- close function
 function unlockAccount {
@@ -340,6 +354,8 @@ Write-Host      "name.surname@fitzroy.org | Name.Surname | xxx111lol | newName.n
   }
         } # --close function
 function lockAccount {
+$currentErrorAction = $ErrorActionPreference
+$ErrorActionPreference = "Stop"
 Clear-Host
 checkConnection
 Add-Content $logGood "----------- BLOCKING ACCOUNT SUCCESS LOG START --------------"
@@ -362,19 +378,20 @@ Add-Content $logBad ""
 
             Add-Content $logGood "[SUCCESS] - $currentRowEmail has been BLOCKED"
             }
-            Catch [System.Exception] {Write-Host ""}
-            Catch {Write-Host "[ERROR] - Something went while trying to BLOCK $currentRowEmail" -ForegroundColor Red
-                                      Add-Content $logBad $Error[0]
-                                      Add-Content $logBad "[ERROR] - Something went while trying to BLOCK $currentRowEmail"  }
+            Catch {Write-Host "[FAIL] to block -  '$currentRowEmail'"
+            $badUsers += $currentRowEmail
+            }
             }#- Close ForLoop
-            Add-Content $logGood "----------- BLOCKING ACCOUNT SUCCESS LOG ENDS --------------"
-            Add-Content $logGood ""
-            Add-Content $logBad "----------- BLOCKING ACCOUNT EXCEPTION LOG ENDS --------------"
-            Add-Content $logBad ""
-            Write-Host "          Accounts have been LOCKED successfully!          " -ForegroundColor Black -BackgroundColor Green
+            Add-Content $logGood "-------------------------------------------------------------"
+            Add-Content $logBad "-------------------------------------------------------------"
+ if($badUsers -eq ""){          
+   Write-Host "          Accounts have been LOCKED successfully!          " -ForegroundColor Black -BackgroundColor Green
+                }
+else{Write-Host "[INFO] - Blocknig accounts complete successfully, but there are some exceptions!" -BackgroundColor Yellow -ForegroundColor Black}
 
         }
     Else{Write-Host "[ERROR] Please select the .csv file to use." -ForegroundColor white -BackgroundColor Red}
+$ErrorActionPreference = $currentErrorAction
 } #-- close function
 function removeAllLicenses() {
 $currentErrorActionPreference = $ErrorActionPreference
@@ -439,13 +456,8 @@ $ErrorActionPreference = $currentErrorActionPreference
 if($errorUsers -eq ""){
 Write-Host "          ALL Licenses have now been removed from the accounts!          " -ForegroundColor Black -BackgroundColor Green
 }
-else{
-Write-Host "--------------------------[FAIL USERS]-------------------" -ForegroundColor White -BackgroundColor Red
-$errorUsersOut = $errorUsers | Sort-Object -Unique
-Write-Host $errorUsersOut -ForegroundColor Red
-Write-Host "---------------------------------------------------------" -ForegroundColor Red
-Write-Host " `n[INFO] Check if License is provide via group/hierarchy conditions or name contains white space on .csv file>>>"  -ForegroundColor Yellow
-}        
+else{Write-Host "[INFO] - Reset password complete successfully, but there are some exceptions!" -BackgroundColor Yellow -ForegroundColor Black}
+      
         
         } #--close function
 function checkInactiveWithLicense {
