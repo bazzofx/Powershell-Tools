@@ -102,6 +102,9 @@ function changeUPN_AD {
 $currentErrorActionPreference = $ErrorActionPreference
 $ErrorActionPreference = "Stop"
 
+Add-Content $logGood "----------- Change UPN SUCCESS LOG START --------------"
+Add-Content $logBad "----------- Change UPN EXCEPTION LOG START --------------" 
+
 forEach ($user in $global:users)
         {
 	    #Read user data from each field in each row and assign the data to a variable as below
@@ -135,41 +138,40 @@ $ErrorActionPreference = $currentErrorActionPreference
 function changeUPN_365 {
 Clear-Host
 checkConnection
-
-Add-Content $logGood "----------- UNLOCKING ACCOUNT SUCCESS LOG START --------------"
-Add-Content $logBad "----------- UNLOCKING ACCOUNT EXCEPTION LOG START --------------"   
+  
  
     foreach($row in $global:users){$i+=1}  #counts how many records exist on .csv file
-    if($i -gt 1) { #to give errors in case user does not select .csv file
+    if($i -ge 1) { #to give errors in case user does not select .csv file
 
         $count =0
         ForEach ($row in $global:users)
             {
-            $currentRowLogin = $global:users.Login[$count]
-            $currentRowPassword = $global:users.Password[$count]
-            $currentRowEmail = $global:users.UserPrincipalName[$count]
-            $NewUserPrincipalName = $global:users.NewUserPrincipalName[$count]
-            Write-Host $currentRowEmail
+            $currentRowLogin = $row.Login
+            $currentRowPassword = $row.Password
+            $currentRowEmail = $row.UserPrincipalName
+            $NewUserPrincipalName = $row.NewUserPrincipalName
             Try{
             
             Set-MsolUserPrincipalName -UserPrincipalName $UserPrincipalName -NewUserPrincipalName $NewUserPrincipalName
+            Write-Host "$currentRowEmail has been updated to : $NewUserPrincipalName" -ForegroundColor Green
 
-
-            Add-Content $logGood "[SUCCESS] - $currentRowEmail has been UNLOCKED"
             }
-            Catch [System.Exception] {Write-Host "[ERROR] Please run this application as an Administrator"}
-            Catch {Write-Host "[ERROR] - Something went wrong while CHANGING EMAIL $currentRowEmail" -ForegroundColor Red
-                   Write-Host "[ERROR] Please run this application as an Administrator" -ForegroundColor Red
-                   Add-Content $logBad "[ERROR] - Something went wrong while CHANGING EMAIL $currentRowEmail"        
+            Catch {
+                Write-Host "[FAIL] Change Email $currentRowEmail" -ForegroundColor Red
+                Write-Host "[INFO] Please run this application as an Administrator - Check if email is spelled correctly." -ForegroundColor Yellow
+                $badUsers += $currentRowEmail
+
+                Add-Content $logBad "[FAIL] CHANGE EMAIL $currentRowEmail"        
                     }
             $count += 1
-            Write-Host "$currentRowEmail has been updated to : $NewUserPrincipalName" -ForegroundColor Green
             } # -Close ForLoop
-            Add-Content $logGood "----------- CHANGING EMAIL ACCOUNT SUCCESS LOG ENDS --------------"
-            Add-Content $logGood ""
-            Add-Content $logBad "----------- CHANGING EMAIL EXCEPTION LOG ENDS --------------"
-            Add-Content $logBad ""
-            Write-Host "          UPN has been successfully updated          " -ForegroundColor Black -BackgroundColor Green
+            Add-Content $logGood "-----------------------------------------------------------" 
+            Add-Content $logBad "------------------------------------------------------------"
+if($badUsers -eq "") {            
+    Write-Host "          UPN has been successfully updated          " -ForegroundColor Black -BackgroundColor Green
+    }
+else{Write-Host "Change of Email completed successfully, but there are some exceptions!" -ForegroundColor Black -BackgroundColor Yellow
+}       
         } #close if
     Else{Write-Host "[ERROR] Please select the .csv file to use." -ForegroundColor White -BackgroundColor Red}
  
@@ -239,10 +241,15 @@ $ErrorActionPreference = $currentErrorAction
 function unlockAccount {
 Clear-Host
 checkConnection
+$currentErrorActionPreference = $ErrorActionPreference
+$ErrorActionPreference = "Stop"
 
 
-Add-Content $logGood "----------- UNLOCKING ACCOUNT SUCCESS LOG START --------------"
-Add-Content $logBad "----------- UNLOCKING ACCOUNT EXCEPTION LOG START --------------"   
+        Add-Content $logGood "----------- UNLOCKING ACCOUNT SUCCESS LOG START --------------"
+        Add-Content $logGood ""
+        Add-Content $logBad "----------- UNLOCKING ACCOUNT EXCEPTION LOG START --------------"
+        Add-Content $logBad ""
+   
  
     foreach($row in $global:users){$i+=1}  #counts how many records exist on .csv file
     if($i -ge 1) { #to give errors in case user does not select .csv file
@@ -253,30 +260,36 @@ Add-Content $logBad "----------- UNLOCKING ACCOUNT EXCEPTION LOG START ---------
             $currentRowLogin = $row.Login
             $currentRowPassword = $row.Password
             $currentRowEmail = $row.UserPrincipalName
-            Write-Host $currentRowEmail
             Try{
-            Set-Msoluser -UserPrincipalName $currentRowEmail -BlockCredential $false -ErrorAction SilentlyContinue
+            Set-Msoluser -UserPrincipalName $currentRowEmail -BlockCredential $false
             Write-Host "[SUCCESS] - $currentRowEmail has been UNLOCKED" -ForegroundColor Green
             Write-Host ""
             Write-Host "---------------------------"
 
             Add-Content $logGood "[SUCCESS] - $currentRowEmail has been UNLOCKED"
             }
-            Catch [System.Exception] {Write-Host ""}
-            Catch {Write-Host "[ERROR] - Something went wrong while UNLOCKING $currentRowEmail" -ForegroundColor Red
-            Add-Content $logBad "[ERROR] - Something went wrong while UNLOCKING $currentRowEmail"        
+            Catch {Write-Host "[FAIL] - UNLOCK FAIL '$currentRowEmail'" -ForegroundColor Red
+            Add-Content $logBad "[FAIL] - UNLOCK FAIL $currentRowEmail"        
             }
 
 
             } # -Close ForLoop
-            Add-Content $logGood "----------- UNLOCKING ACCOUNT SUCCESS LOG ENDS --------------"
-            Add-Content $logGood ""
-            Add-Content $logBad "----------- UNLOCKING ACCOUNT EXCEPTION LOG ENDS --------------"
-            Add-Content $logBad ""
-            Write-Host "          Accounts have been UNLOCKED successfully!          " -ForegroundColor Black -BackgroundColor Green
+            Add-Content $logGood "--------------------------------------------------------------"
+            Add-Content $logBad "--------------------------------------------------------------"
+
+if($errorUsers -eq ""){
+Write-Host "          Accounts have been UNLOCKED successfully!          " -ForegroundColor Black -BackgroundColor Green
+}
+else{Write-Host "[INFO] - UNLOCK ACCOUNT complete successfully, but there are some exceptions!" -BackgroundColor Yellow -ForegroundColor Black}
+                  
+
+
+        
+        
         } #close if
     Else{Write-Host "[ERROR] Please select the .csv file to use." -ForegroundColor White -BackgroundColor Red}
 
+$ErrorActionPreference = $currentErrorActionPreference
 } #-- close function
 function addLicense {
 Clear-Host
@@ -324,7 +337,7 @@ checkConnection
         } #-- close function
 function changeUPN{
 changeUPN_AD
-changeUPN_365
+#changeUPN_365
 } # --close function
 
 
@@ -335,9 +348,9 @@ $csvExportPath = "$myDownload\IT-Data-Upload-Sample.csv"
 
 $array =@()
         $row = New-Object Object
-        $row | Add-Member -MemberType NoteProperty -Name "UserPrincipalName" -Value "DONOT.DELETE@fitzroy.org"
-        $row | Add-Member -MemberType NoteProperty -Name "Login" -Value "Dont delete this row"
-        $row | Add-Member -MemberType NoteProperty -Name "Password" -Value "Dont delete this row"
+        $row | Add-Member -MemberType NoteProperty -Name "UserPrincipalName" -Value "Name.Surname@fitzroy.org"
+        $row | Add-Member -MemberType NoteProperty -Name "Login" -Value "name.Surname"
+        $row | Add-Member -MemberType NoteProperty -Name "Password" -Value "Cookies"
         $row | Add-Member -MemberType NoteProperty -Name "NewUserPrincipalName" -Value "newName.newSurname@fitzroy.org"
         $array += $row
 Try{
@@ -372,13 +385,13 @@ Add-Content $logBad ""
         
             Try{
             Set-Msoluser -UserPrincipalName $currentRowEmail -BlockCredential $true
-            Write-Host "[SUCCESS] - $currentRowEmail has been BLOCKED" -ForegroundColor yellow
+            Write-Host "[SUCCESS] - $currentRowEmail has been BLOCKED" -ForegroundColor Green
             Write-Host ""
-            Write-Host "---------------------------"
 
             Add-Content $logGood "[SUCCESS] - $currentRowEmail has been BLOCKED"
             }
-            Catch {Write-Host "[FAIL] to block -  '$currentRowEmail'"
+            Catch {Write-Host "[FAIL] to block -  '$currentRowEmail'" -ForegroundColor Red
+                  Add-Content $logBad "[FAIL] $currentRowEmail"
             $badUsers += $currentRowEmail
             }
             }#- Close ForLoop
