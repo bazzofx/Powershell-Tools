@@ -6,7 +6,7 @@ $ErrorActionPreference = "silentlycontinue"
 $userProfile = $env:USERPROFILE
 $license = "FitzRoy:STANDARDWOFFPACK"
 
-$logPath = "$userProfile\Documents\Reports\AdminDashBoard\"
+$logPath = "C:\iMsScripts\HULK 365\"
 $logGoodFile = "SUCCESS $(get-date -f dd-MM-yyy).log"
 $logBadFile = "EXCEPTIONS $(get-date -f dd-MM-yyy).log"
 $logGood = $logPath + $logGoodFile
@@ -44,6 +44,7 @@ function loadCSV{
  $global:users = Import-CSV $filePath -Header "UserPrincipalName", "Login", "Password","NewUserPrincipalName" |
                                                         Where-Object{$_.UserPrincipalName -ne "UserPrincipalName"}
  Write-Host "[SUCCESS] Data files loaded successfully" -ForegroundColor Green
+ Write-Host $global:users
   }
   Catch{Write-Host "[WARNING] Failed to import data" -ForegroundColor red }
                   } #-- close function
@@ -57,7 +58,7 @@ function checkConnection{
     Write-Host "" -ForegroundColor Green}
     else{ Write-Host "You will need to login before you use this application" -ForegroundColor Yellow
           Startlogin}
-if($env:COMPUTERNAME -eq "azdc01"){Write-Host "You are connected to AD Domain Controller" -ForegroundColor Green}
+if($env:COMPUTERNAME -eq "azdc01"){Write-Host "Connection TEST PASSED - You are operating from the AD Domain Controller" -ForegroundColor Green}
 else{Write-Host "You will also need to connect to AZDC01 to reset the password" -ForegroundColor Yellow
     loginAzureAD}
 
@@ -92,7 +93,8 @@ Get-MsolDomain -ErrorAction SilentlyContinue
 
 } #-- close function
 function loginAzureAD{
-if($env:COMPUTERNAME -eq "azdc01"){Write-Host "You are now connected to Azure AD AZDC01 Server" -ForegroundColor Green}
+if($env:COMPUTERNAME -eq "azdc01"){Write-Host "You are already connected to Azure AD AZDC01 Server." -ForegroundColor Green
+Write-Host "Proceding to login to Office 365 Online..." -ForegroundColor Green}
 Else{$session = New-PSSession azdc01 -Credential (Get-Credential)
 Enter-PSSession $session}
 return
@@ -374,7 +376,9 @@ Add-Content $logBad ""
         }
     Else{Write-Host "[ERROR] Please select the .csv file to use." -ForegroundColor white -BackgroundColor Red}
 } #-- close function
-function removeAllLicenses($global:users) {
+function removeAllLicenses() {
+$currentErrorActionPreference = $ErrorActionPreference
+$ErrorActionPreference = "Stop"
 Clear-Host
 checkConnection
         Add-Content $logGood "----------- REMOVAL ALL LICENSES SUCCESS LOG START --------------"
@@ -385,13 +389,13 @@ checkConnection
         
 For($j=1;$j -le 2;$j++) #run the loop twice, running once was not working correctly.
 {
-  foreach($row in $global:users){$i+=1}  #counts how many records exist on .csv file
-        
+
+    foreach($row in $global:users){$i+=1}  #counts how many records exist on .csv file
     if($i -ge 1) { #to give errors in case user does not select .csv file
-        $count = 0
-        Write-host "$global:users" -ForegroundColor Yellow
-            ForEach ($row in $global:users)
-                {
+        #Write-host "$currentRowEmail" -ForegroundColor Yellow
+
+        ForEach ($row in $global:users)
+            {
             $currentRowLogin = $row.Login
             $currentRowPassword = $row.Password
             $currentRowEmail = $row.UserPrincipalName
@@ -399,52 +403,50 @@ For($j=1;$j -le 2;$j++) #run the loop twice, running once was not working correc
             Try{        
         (get-MsolUser -UserPrincipalName $currentRowEmail).licenses.AccountSkuId |
         foreach{Set-MsolUserLicense -UserPrincipalName $currentRowEmail -RemoveLicenses $_ -ErrorAction Stop
-            Write-Host "[SUCCESS] - The Licenses from $currentRowEmail has been removed." -ForegroundColor yellow
+            if($j -eq 2){ 
+            Write-Host "[SUCCESS] - The Licenses from $currentRowEmail has been removed." -ForegroundColor Green
 
             Add-Content $logGood "[SUCCESS] - The Licenses from $currentRowEmail has been removed."
-
+                        }
             }
        }#-close Try
-            Catch [Microsoft.Online.Administration.Automation.MicrosoftOnlineException] 
-            {Write-Host "[ERROR] $currentRowEmail" -ForegroundColor Yellow -BackgroundColor Black
-            Write-Host "[ERROR] The license was not removed from $currentRowEmail`n Check if the UPN contain ending spaces and remove them from your .csv file" -ForegroundColor White -BackgroundColor Red
-            Write-Host "<<< Check if License is provide via group/hierarchy conditions >>>"  -BackgroundColor Red -ForegroundColor White                                                                 
-            }#close Catch   
-            Catch [System.Exception] 
+            Catch
             {
-                
-                $user = $currentRowEmail
+            if($j -eq 2){   
+            $user = $currentRowEmail
                 $errorUsers += $user
-                
+            Write-Host "[FAIL EXCEPTION]------------------------x" -ForegroundColor Red
+            Add-Content $logBad "[ERROR] $currentRowEmail"
+                        }
+            }#close Catch
 
-            Write-Host "-----------------------------------------------------------------" -ForegroundColor Red
-            Write-Host "[ERROR] The license was not removed from $currentRowEmail`n Check if email is typed correctly or contain ending spaces and remove them from your .csv file" -ForegroundColor White -BackgroundColor Red
-            Write-Host "<<< Check if License is provide via group/hierarchy conditions >>>"  -BackgroundColor Red -ForegroundColor White
-            Write-Host ""
-                                      }#close Catch
-            Catch 
-            {
-                $user = $currentRowEmail
-                $errorUsers += $user
-            Write-Host "[ERROR] - Something went wrong while removing licenses from $email" -ForegroundColor Red
-            Add-Content $logBad $Error[0]
-            Add-Content $logBad "[ERROR] The license was not removed from $currentRowEmail`n Check if the UPN contain ending spaces and remove them from your .csv file"
-    }#close Catch
     } # -- close ForEach
-        Add-Content $logbad "USERS WHO FAILED TO REMVOVE LICENSES"
-        Add-Content $logGood "----------- REMOVAL ALL LICENSES SUCCESS LOG END --------------"
+        if($j -eq 2){ 
+        Add-Content $logGood "-----------------------------------------------------------------"
         Add-Content $logGood ""
-        Add-Content $logBad "----------- REMOVAL ALL LICENSES EXCEPTION LOG END --------------"
+        Add-Content $logBad "Check if  UPN  is typed wrong or contain ending spaces or and remove them from your .csv file"
+        Add-Content $logBad "-----------------------------------------------------------------"
         Add-Content $logBad "" 
-           
+           }
             
             }#close if
     Else{Write-Host "[ERROR] Please select the .csv file to use." -ForegroundColor white -BackgroundColor red
     }
 
-Write-Host "          ALL Licenses have now been removed from the accounts!          " -ForegroundColor Black -BackgroundColor Green
 
-}# For Close
+}#cls For 
+$ErrorActionPreference = $currentErrorActionPreference
+if($errorUsers -eq ""){
+Write-Host "          ALL Licenses have now been removed from the accounts!          " -ForegroundColor Black -BackgroundColor Green
+}
+else{
+Write-Host "--------------------------[FAIL USERS]-------------------" -ForegroundColor White -BackgroundColor Red
+$errorUsersOut = $errorUsers | Sort-Object -Unique
+Write-Host $errorUsersOut -ForegroundColor Red
+Write-Host "---------------------------------------------------------" -ForegroundColor Red
+Write-Host " `n[INFO] Check if License is provide via group/hierarchy conditions or name contains white space on .csv file>>>"  -ForegroundColor Yellow
+}        
+        
         } #--close function
 function checkInactiveWithLicense {
 
@@ -492,7 +494,8 @@ $window = New-Object $FormObject
 $window.MaximumSize="360,490"
 $window.MinimumSize="360,490"
 $window.ClientSize="350,450"
-$window.Text="[H.U.L.K] Hybrid User Lifecycle Kit"
+$window.Text="[H.U.L.K]"
+$window.ForeColor = "darkblue"
 $window.backcolor = $bgcolor
 ####$window.Add_FormClosing( { $_.Cancel = $true; } ) ###make user unable to close window
 
@@ -535,6 +538,7 @@ $btn_Search.Location = New-Object System.Drawing.Point(250,80)
 $lbl_Onboarding = New-Object $LabelObject
 $lbl_Onboarding.text = "_____________Onboarding_____________"
 $lbl_Onboarding.Autosize = $true
+$lbl_Onboarding.ForeColor = "black"
 $lbl_Onboarding.Font=$titleFont ### --------------------------------------------font here
 $lbl_Onboarding.Location = New-Object system.drawing.point (20,120)
 
@@ -554,7 +558,7 @@ $rdn_Button2.AutoSize=$true
 $rdn_Button2.Parent="onboarding"
 
 $rdn_Button3 = New-Object $RadioObject
-$rdn_Button3.Text ="Add MS License"
+$rdn_Button3.Text ="Add Ms E2 License"
 $rdn_Button3.Font=$radioFont
 $rdn_Button3.Location= New-Object System.Drawing.Point(20,200)
 $rdn_Button3.AutoSize=$true
@@ -570,6 +574,7 @@ $rdn_Button4.Parent="onboarding"
     #Define Onboarding Label
 $lbl_Offboarding = New-Object $LabelObject
 $lbl_Offboarding.text = "_____________Offboarding_____________"
+$lbl_Offboarding.ForeColor = "black"
 $lbl_Offboarding.Autosize = $true
 $lbl_Offboarding.Font=$titleFont ### --------------------------------------------font here
 $lbl_Offboarding.Location = New-Object system.drawing.point (20,255)
