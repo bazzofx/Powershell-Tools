@@ -78,8 +78,7 @@ Get-MsolDomain -ErrorAction SilentlyContinue
                 Get-MsolDomain -ErrorAction SilentlyContinue 
     if($?){Write-Host "You are now connected to Microsoft Online 365" -ForegroundColor Green 
            $lbl_connected.Text="Connection to Office 365"
-           $lbl_connected.ForeColor="green"}
-                Add-Content $logGood "Login to Microsoft Online 365 successfull"}
+           $lbl_connected.ForeColor="green"}}
     Catch [System.Exception] {Write-Warning $Error[0]
                 Add-Content $logBad $Error[0]
                 Add-Content $logBad "Microsfot Online 365 was not able to connect"
