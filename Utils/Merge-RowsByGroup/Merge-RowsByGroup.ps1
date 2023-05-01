@@ -25,6 +25,7 @@ ForEach($x in $data){
     
       
     #------------------------------------------- LOCAL VARIABLES -----------------------------
+ #DEBUG if($c -eq "09888"){Write-host "$c @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@";Start-Sleep 1}
           if ($c -ne $n){ #IF CURRENT ROW NOT EQUALS NEXT ROW
               if($adjRaw -eq ""){ #IF ADJUSTMENT EMPTY USE TOTAL ENTITLEMENT
                   $total = $t
@@ -38,7 +39,7 @@ ForEach($x in $data){
 
       $row = New-Object Object
       $row | Add-Member -MemberType NoteProperty -Name "EmployeeID" -Value $c
-      $row | Add-Member -MemberType NoteProperty -Name "TotalEntiTrent" -Value $total  
+      $row | Add-Member -MemberType NoteProperty -Name "Total" -Value $total  
       $array += $row  
       $r= "firstRow"     #SET TRIGGER TO CREATE ROW ONCE
     } #FIRST CHECK IF CURRENT ROW NOT EQUALS NEXT ROW
@@ -52,7 +53,7 @@ ForEach($x in $data){
           if($p -eq $c -and $key -eq ""){$global:adjustment += $adjRaw; $total = $global:adjustment + $t; $key ="done"
 
      $row | Add-Member -MemberType NoteProperty -Name "EmployeeID" -Value $c -Force # very important to use the -force flag to override value
-     $row | Add-Member -MemberType NoteProperty -Name "TotalEntiTrent" -Value $total -Force # very important to use the -force flag to override value
+     $row | Add-Member -MemberType NoteProperty -Name "Total" -Value $total -Force # very important to use the -force flag to override value
      ###$array += $row ######## Dont need to create a new row here
            Write-Debug $global:adjustment 
            Write-Debug "Previous row equals next row"

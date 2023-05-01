@@ -2,8 +2,9 @@
 
 ##################################################################
 #--------------LOG VARIABLES START -------------------------------
-$ErrorActionPreference = "silentlycontinue"
 $userProfile = $env:USERPROFILE
+$ErrorActionPreference = "silentlycontinue"
+$global:serverName = "AZDC01"
 $license = "FitzRoy:STANDARDWOFFPACK"
 
 $logPath = "C:\iMsScripts\HULK 365\reports\"
@@ -53,12 +54,12 @@ Add-Content $logBad "------------>                Starting Log File on          
 } #-- close function
 function checkConnection{
     Get-MsolDomain  -ErrorAction SilentlyContinue | Out-Null
-    if($?){ 
-    Write-Host "" -ForegroundColor Green}
+    if($?){ #$? means asks a question to the program, did the last command was succesfull, it returns True or false.
+    Write-Host "" -ForegroundColor Green} #if true means you are connected, do nothing, otherwise try to connect
     else{ Write-Host "You will need to login before you use this application" -ForegroundColor Yellow
           Startlogin}
 if($env:COMPUTERNAME -eq "azdc01"){Write-Host "Connection TEST PASSED - You are operating from the AD Domain Controller" -ForegroundColor Green}
-else{Write-Host "You will also need to connect to AZDC01 to reset the password" -ForegroundColor Yellow
+else{Write-Host "You will need to run this application from the AZDC01" -ForegroundColor Yellow
     loginAzureAD}
 
  
@@ -92,8 +93,8 @@ Get-MsolDomain -ErrorAction SilentlyContinue
 
 } #-- close function
 function loginAzureAD{
-if($env:COMPUTERNAME -eq "azdc01"){Write-Host "You are already connected to Azure AD AZDC01 Server." -ForegroundColor Green
-Write-Host "Proceding to login to Office 365 Online..." -ForegroundColor Green}
+if($env:COMPUTERNAME -eq "azdc01"){
+Write-Host "You are already connected to Azure AD AZDC01 Server." -ForegroundColor Green}
 Else{$session = New-PSSession azdc01 -Credential (Get-Credential)
 Enter-PSSession $session}
 return
@@ -185,7 +186,7 @@ function startLogin {
 Start-Log
 loginAzureAD
 Start-sleep -Milliseconds 2000
-login365
+#login365
 
 
 } #-- close function 
@@ -217,6 +218,7 @@ $badUsers = @()
                      #reset on AZDC01 Server
                      $accountName = get-aduser -Filter "UserPrincipalName -eq  '$currentRowEmail'"|
                      Set-ADAccountPassword -Reset -NewPassword (ConvertTo-SecureString $currentRowPassword -AsPlainText -Force)
+                     Set-ADUser -Identity $currentRowLogin -ChangePasswordAtLogon $true
                      Write-Host "[SUCCESS] The password for $currentRowEmail has been reset on AZDC01 to ---> |  '$currentRowPassword'" -ForegroundColor Green
                      Write-Host "Changes may take up to 30mins to propagate..." -ForegroundColor Yellow
                      Write-Host "----------------------------------------------" -ForegroundColor Yellow
@@ -473,7 +475,8 @@ else{Write-Host "[INFO] - Reset password complete successfully, but there are so
       
         
         } #--close function
-function checkInactiveWithLicense {
+function checkInactiveWithLicense{Write-Host "[INFO] This function is currently turned off, due to the end of life module MSOlservice and Azure AD." -ForegroundColor Yellow}
+function checkInactiveWithLicense_old {
 
 Clear-Host
 checkConnection
@@ -494,7 +497,6 @@ Catch{Write-Host "[ERROR] Something went wrong trying to get Inactive users with
 
 
 } # --close function
-
 
 
 ###-  -  -  -  -  -  -  -  - ... ... \_(*.*)_/ FORM DESIGN STARTS HERE \_(*.*)_/ ... ... -  -  -  -  -  -  -  -  -  -###
@@ -551,7 +553,7 @@ $lbl_connected.text = "Not yet connected"
 $lbl_connected.ForeColor="red"
 $lbl_connected.Font="Verdana,9"
 $lbl_connected.AutoSize=$true
-$lbl_connected.Location = New-Object system.drawing.point (20,47)    
+$lbl_connected.Location = New-Object system.drawing.point (12,45)    
     #Define Search Button
 $btn_Search = New-Object $ButtonObject
 $btn_Search.text="Search..."
@@ -681,19 +683,20 @@ Elseif ($rdn_Button3.Checked  -eq $true ) {addLicense}
 Elseif ($rdn_Button4.Checked  -eq $true ) {changeUPN}
 Elseif ($rdn_Button5.Checked  -eq $true ) {lockAccount }
 Elseif ($rdn_Button6.checked -eq $true)   {removeAllLicenses}
-Else {Write-Host "[ERROR] You are not yet connected to Office 365. - Please select an option." -foreground Red} 
+Else {Write-Host "[ERROR] You are not yet connected to your AZDC01. - Please select an option." -foreground Red} 
  }#close function
 
 function checkConnected{
 Write-Host "All log files will be saved $logPath" -ForegroundColor Yellow
 Write-Host "------------------------------------------------------------------"
 Try{
-    Get-MsolDomain  -ErrorAction SilentlyContinue | Out-Null
-        if($?){Write-Host "You are now connected to Microsoft Online 365" -ForegroundColor Green 
-               $lbl_connected.Text="Connection to Office 365"
+    ###Get-MsolDomain  -ErrorAction SilentlyContinue | Out-Null ## legacy check connectino to 365
+    $serverNameConst = $env:COMPUTERNAME
+        if($serverNameConst -eq $global:serverName){Write-Host "You are now connected to the AZDC01 Server" -ForegroundColor Green 
+               $lbl_connected.Text="You are connected to AZDC01"
                $lbl_connected.ForeColor="green"
                 }
-        Else{Write-Host "You will first need to connect to the Office 365 before using the software" -ForegroundColor Yellow}
+        Else{Write-Host "You will first need to connect to the AZDC01 before using the software" -ForegroundColor Yellow}
     }#close Try
 Catch{}
 }#close function
