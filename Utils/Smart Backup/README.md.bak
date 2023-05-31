@@ -1,4 +1,4 @@
-# Backup Script
+# Backup Script Readme
 
 This script performs a backup by recursively copying files and folders from a source folder to a destination folder. It also logs the backup process in a specified log file.
 
