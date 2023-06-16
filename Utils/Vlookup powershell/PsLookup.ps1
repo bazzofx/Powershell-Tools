@@ -1,13 +1,13 @@
 ﻿#change for the working path directory of file
 ### Currently Working directory of script
-$wd= "" 
+$wd= "C:\Users\Paulo.Bazzo\OneDrive - FitzRoy\Documents\FitzRoy\Trent Projects\2023\June\MattZone" 
 #-------------- CHANGE ME
+#File 2 will be added into file 1
+$filePath1 = "$wd\patterOverrideResponses.csv"
+$filePath2 = "$wd\AllEmployees.csv"
+$outLocation = "$wd\finalPatternResponses.csv"
+$lookupKey = "Email"
 
-$filePath1 = "$wd\main.csv"
-$filePath2 = "$wd\weight.csv"
-$outLocation = "$wd\Oven\Cooked_Report.csv"
-$lookupKey = "Salary identifier"
-$column = ""
 
 #├----------------------- FUNCTIONS -----------------------
 function emoji ($hexValue,$fgColor,$bgColor){
@@ -81,15 +81,4 @@ pd -filePath1 $filePath1 -filePath2 $filePath2 -column $column -lookupKey $looku
 #├----------------------- FUNCTIONS -----------------------
 
 #├-----------------------  EXAMPLES 1-----------------------
-Pslookup -column "weight"
-$filePath2 = "$wd\salary.csv"
-Pslookup -column "Salary"
-Pslookup -column "Year"
-#├-----------------------  EXAMPLES 2 -----------------------
-pd -filePath1 $filePath1 -filePath2 $filePath2 -column "Salary" -lookupKey "Salary identifier" -outLocation "$wd\Oven\salaryOnly_merged.csv"
-
-#├-----------------------  EXAMPLES 3 -----------------------
-#Write-Host "Headers for file1"
-#Headers1
-#Write-Host "Headers for file2"
-#Headers2
+Pslookup -column "EmployeeID"
