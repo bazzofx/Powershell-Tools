@@ -1,4 +1,4 @@
-﻿$array = @()
+$array = @()
 
 ForEach($object in $myCsvFile)
     {
