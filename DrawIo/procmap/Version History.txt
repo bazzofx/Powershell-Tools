@@ -1,0 +1,20 @@
+v6.0
+
+
+v5.9-------------------------------------------------------
+Added new switch that will let use the -v or -verbose
+By default each cell on mindMap will have the last binary of the path
+-v or -verbose: Is used, the cell on the mindMap will have the full path of the file.
+This will create a bigger mind map but will show the full path at a glance.
+
+v5.8-------------------------------------------------------
+Added new switch -nouser
+-n or nouser : will skip the check if the row as an 'objectUser' header associated with it, this is useful for some reports.
+Default : script will skip records that do not have an user associated with it.
+For some reports which there is not a user associated with the line, we want to use this switch.
+v5.7-------------------------------------------------------
+If the report does not have an ObjectUser column or is blank we need to comment the line where it check if the colulmn exist 
+inside the generateTemp1 function
+
+
+v5.6------------First Working Version
