@@ -1,9 +1,0 @@
-objectUser,parentFilePath,processFilePath,objectFilePath,processSigner,processCmd
-dad,parendCMD1,child1,EXE1,CyberSamurai,inTuneCheck
-dad,parentCMD2,child2,EXE2,,HealthCheck
-dad,parendCMD1,child3,EXE3,,
-mom,MOM1,MOMChild1,momExe1,,HealthCheck
-mom,MOM2,MOMChild2,momExe2,,
-dad,parendCMD1,child1,EXE11,,
-dad,parendCMD1,child1,EXE111,,
-mom,parendCMD1,child1,virus.exe,,
