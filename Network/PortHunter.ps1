@@ -2,6 +2,8 @@ Clear-Host
 $targetIp = Get-Content "c:/temp/ips.txt"
 $outArray = @()
 $outfile = "C:\temp\outFile.txt"
+
+
 $port = Read-Host "Select the port number you would like to check if its open? " 
 
 forEach ($record in $targetIp){
@@ -21,7 +23,7 @@ $log = Get-Content "C:\temp\outFile.txt"
 
 forEach($x in $log){
     if ($x -like "*OPEN*"){
-        $x = $x.replace("[OPEN] IP: ","").replace(" on Port 3389","")
+        $x = $x.replace("[OPEN] IP: ","").replace(" on Port $port","")
         Write-Host $x -ForegroundColor Green
         }
 }
