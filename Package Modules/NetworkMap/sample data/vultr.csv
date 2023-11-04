@@ -1,0 +1,330 @@
+﻿Logged,hostName,clientIp,clientPort,dhost,remarks,src,peerHost,ruleName,shost,dst,dOSName,clientFlag,act,app,serverMAC,deviceDirection
+28/09/2023 11:31,95.179.138.110.vultrusercontent.com,10.102.82.213,17631,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+28/09/2023 11:31,95.179.138.110.vultrusercontent.com,10.102.82.213,17631,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+28/09/2023 11:31,vultrusercontent.com,10.9.8.7,19366,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+28/09/2023 11:31,vultrusercontent.com,10.9.8.7,19366,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+28/09/2023 11:31,95.179.138.110.vultrusercontent.com,10.9.8.7,22179,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+28/09/2023 11:31,95.179.138.110.vultrusercontent.com,10.9.8.7,22179,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+28/09/2023 11:31,vultrusercontent.com,,,,,,,,,,,,,,,
+28/09/2023 11:31,95.179.138.110.vultrusercontent.com,,,,,,,,,,,,,,,
+28/09/2023 11:31,northgateps.com,,,95.179.138.110.vultrusercontent.com,"[""Domain: northgateps.com""]","[""152.114.57.24""]",152.114.57.24,Host DNS Mx record query of a non-trusted domain,152.114.57.24,"[""95.179.138.110""]",,dst,"[""not blocked""]",DNS Response,,inbound
+28/09/2023 11:31,95.179.138.110.vultrusercontent.com,,,152.114.57.124,"[""Domain: 95.179.138.110.vultrusercontent.com""]","[""208.67.220.220""]",resolver2.opendns.com,DNS response resolves to dead IP address,resolver2.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+28/09/2023 11:31,95.179.138.110.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 95.179.138.110.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+28/09/2023 11:31,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",resolver2.opendns.com,DNS response resolves to dead IP address,resolver2.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+28/09/2023 11:31,95.179.138.110.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 95.179.138.110.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+28/09/2023 11:31,95.179.138.110.vultrusercontent.com,,,152.114.57.124,"[""Domain: 95.179.138.110.vultrusercontent.com""]","[""208.67.220.220""]",resolver2.opendns.com,DNS response resolves to dead IP address,resolver2.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+28/09/2023 11:31,95.179.138.110.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 95.179.138.110.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+28/09/2023 11:31,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",resolver2.opendns.com,DNS response resolves to dead IP address,resolver2.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+28/09/2023 11:31,95.179.138.110.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 95.179.138.110.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+28/09/2023 10:20,vultrusercontent.com,10.9.8.7,46706,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+28/09/2023 10:20,vultrusercontent.com,10.9.8.7,46706,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+28/09/2023 10:20,45.77.63.86.vultrusercontent.com,10.102.82.213,57684,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+28/09/2023 10:20,45.77.63.86.vultrusercontent.com,10.102.82.213,57684,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+28/09/2023 10:20,45.77.63.86.vultrusercontent.com,10.9.8.7,29868,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+28/09/2023 10:20,45.77.63.86.vultrusercontent.com,10.9.8.7,29868,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+28/09/2023 10:20,vultrusercontent.com,,,,,,,,,,,,,,,
+28/09/2023 10:20,45.77.63.86.vultrusercontent.com,,,,,,,,,,,,,,,
+28/09/2023 10:20,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+28/09/2023 10:20,45.77.63.86.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.77.63.86.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+28/09/2023 10:20,45.77.63.86.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.77.63.86.vultrusercontent.com""]","[""208.67.220.220""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+28/09/2023 10:20,45.77.63.86.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.77.63.86.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+28/09/2023 10:20,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+28/09/2023 10:20,45.77.63.86.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.77.63.86.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+28/09/2023 10:20,northgateps.com,,,45.77.63.86.vultrusercontent.com,"[""Domain: northgateps.com""]","[""152.114.57.24""]",152.114.57.24,Host DNS Mx record query of a non-trusted domain,152.114.57.24,"[""45.77.63.86""]",,dst,"[""not blocked""]",DNS Response,,inbound
+28/09/2023 10:20,45.77.63.86.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.77.63.86.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+28/09/2023 10:20,45.77.63.86.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.77.63.86.vultrusercontent.com""]","[""208.67.220.220""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+27/09/2023 13:14,95.179.138.110.vultrusercontent.com,10.102.82.213,34789,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+27/09/2023 13:14,vultrusercontent.com,10.9.8.7,25366,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+27/09/2023 13:14,95.179.138.110.vultrusercontent.com,10.102.82.213,34789,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+27/09/2023 13:14,vultrusercontent.com,10.9.8.7,25366,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+27/09/2023 13:14,95.179.138.110.vultrusercontent.com,10.9.8.7,29011,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+27/09/2023 13:14,95.179.138.110.vultrusercontent.com,10.9.8.7,29011,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+27/09/2023 13:14,vultrusercontent.com,,,,,,,,,,,,,,,
+27/09/2023 13:14,95.179.138.110.vultrusercontent.com,,,,,,,,,,,,,,,
+27/09/2023 13:14,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""8.8.4.4""]",dns.google,DNS response resolves to dead IP address,dns.google,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+27/09/2023 13:14,95.179.138.110.vultrusercontent.com,,,152.114.57.124,"[""Domain: 95.179.138.110.vultrusercontent.com""]","[""8.8.4.4""]",dns.google,DNS response resolves to dead IP address,dns.google,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+27/09/2023 13:14,northgateps.com,,,95.179.138.110.vultrusercontent.com,"[""Domain: northgateps.com""]","[""152.114.57.24""]",152.114.57.24,Host DNS Mx record query of a non-trusted domain,152.114.57.24,"[""95.179.138.110""]",,dst,"[""not blocked""]",DNS Response,,inbound
+27/09/2023 13:14,95.179.138.110.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 95.179.138.110.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+27/09/2023 13:14,northgateps.com,,,95.179.138.110.vultrusercontent.com,"[""Domain: northgateps.com""]","[""152.114.57.24""]",152.114.57.24,Host DNS Mx record query of a non-trusted domain,152.114.57.24,"[""95.179.138.110""]",,dst,"[""not blocked""]",DNS Response,,inbound
+27/09/2023 13:14,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""8.8.4.4""]",dns.google,DNS response resolves to dead IP address,dns.google,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+27/09/2023 13:14,95.179.138.110.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 95.179.138.110.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+27/09/2023 13:14,95.179.138.110.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 95.179.138.110.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+27/09/2023 13:14,95.179.138.110.vultrusercontent.com,,,152.114.57.124,"[""Domain: 95.179.138.110.vultrusercontent.com""]","[""8.8.4.4""]",dns.google,DNS response resolves to dead IP address,dns.google,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+27/09/2023 13:14,95.179.138.110.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 95.179.138.110.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+27/09/2023 09:50,45.76.69.64.vultrusercontent.com,10.102.82.213,14442,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+27/09/2023 09:50,vultrusercontent.com,10.9.8.7,13452,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+27/09/2023 09:50,45.76.69.64.vultrusercontent.com,10.102.82.213,14442,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+27/09/2023 09:50,vultrusercontent.com,10.9.8.7,13452,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+27/09/2023 09:50,45.76.69.64.vultrusercontent.com,10.9.8.7,46076,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+27/09/2023 09:50,45.76.69.64.vultrusercontent.com,10.9.8.7,46076,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+27/09/2023 09:50,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+27/09/2023 09:50,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+27/09/2023 09:50,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+27/09/2023 09:50,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+27/09/2023 09:50,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+27/09/2023 09:50,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+27/09/2023 09:50,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+27/09/2023 09:50,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+27/09/2023 09:50,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+26/09/2023 14:39,download.webmin.com,,,192.168.2.81,"[""IP address: 104.207.151.13""]","[""104.207.151.13""]",104.207.151.13.vultrusercontent.com,Lets Encrypt Certificate - HTTPS (Response),104.207.151.13.vultrusercontent.com,"[""192.168.2.81""]",,dst,"[""not blocked""]",TLS,,inbound
+26/09/2023 11:35,,,,,,,,,,,,,,,,
+25/09/2023 08:43,45.76.69.64.vultrusercontent.com,10.102.82.213,49770,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+25/09/2023 08:43,45.76.69.64.vultrusercontent.com,10.102.82.213,49770,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+25/09/2023 08:43,vultrusercontent.com,10.9.8.7,42810,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+25/09/2023 08:43,45.76.69.64.vultrusercontent.com,10.9.8.7,23860,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+25/09/2023 08:43,45.76.69.64.vultrusercontent.com,10.9.8.7,23860,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+25/09/2023 08:43,vultrusercontent.com,10.9.8.7,42810,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+25/09/2023 08:43,45.76.69.64.vultrusercontent.com,,,,,,,,,,,,,,,
+25/09/2023 08:43,45.76.69.64.vultrusercontent.com,,,,,,,,,,,,,,,
+25/09/2023 08:43,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+25/09/2023 08:43,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+25/09/2023 08:43,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+25/09/2023 08:43,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+25/09/2023 08:43,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+25/09/2023 08:43,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+25/09/2023 08:43,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+25/09/2023 08:43,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+25/09/2023 08:43,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+24/09/2023 08:26,45.76.69.64.vultrusercontent.com,10.102.82.213,60552,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+24/09/2023 08:26,45.76.69.64.vultrusercontent.com,10.102.82.213,60552,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+24/09/2023 08:26,vultrusercontent.com,10.9.8.7,65193,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+24/09/2023 08:26,vultrusercontent.com,10.9.8.7,65193,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+24/09/2023 08:26,45.76.69.64.vultrusercontent.com,10.9.8.7,55591,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+24/09/2023 08:26,45.76.69.64.vultrusercontent.com,10.9.8.7,55591,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+24/09/2023 08:26,vultrusercontent.com,,,,,,,,,,,,,,,
+24/09/2023 08:26,45.76.69.64.vultrusercontent.com,,,,,,,,,,,,,,,
+24/09/2023 08:26,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+24/09/2023 08:26,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+24/09/2023 08:26,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+24/09/2023 08:26,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+24/09/2023 08:26,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+24/09/2023 08:26,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+24/09/2023 08:26,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+24/09/2023 08:26,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+24/09/2023 08:26,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+23/09/2023 03:37,vultrusercontent.com,,,,,,,,,,,,,,,
+23/09/2023 03:37,45.76.69.64.vultrusercontent.com,,,,,,,,,,,,,,,
+23/09/2023 03:37,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+22/09/2023 14:44,45.76.69.64.vultrusercontent.com,10.102.82.213,7779,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+22/09/2023 14:44,vultrusercontent.com,10.9.8.7,19239,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+22/09/2023 14:44,vultrusercontent.com,10.9.8.7,19239,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+22/09/2023 14:44,45.76.69.64.vultrusercontent.com,10.102.82.213,7779,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+22/09/2023 14:44,45.76.69.64.vultrusercontent.com,10.9.8.7,56639,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+22/09/2023 14:44,45.76.69.64.vultrusercontent.com,10.9.8.7,56639,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+22/09/2023 14:44,vultrusercontent.com,,,,,,,,,,,,,,,
+22/09/2023 14:44,45.76.69.64.vultrusercontent.com,,,,,,,,,,,,,,,
+22/09/2023 14:44,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+22/09/2023 14:44,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+22/09/2023 14:44,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+22/09/2023 14:44,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+22/09/2023 14:44,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+22/09/2023 14:44,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+22/09/2023 14:44,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+22/09/2023 14:44,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+22/09/2023 14:44,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+22/09/2023 09:38,northgateps.com,,,45.77.63.86.vultrusercontent.com,"[""Domain: northgateps.com""]","[""152.114.57.24""]",152.114.57.24,Host DNS Mx record query of a non-trusted domain,152.114.57.24,"[""45.77.63.86""]",,dst,"[""not blocked""]",DNS Response,,inbound
+22/09/2023 09:38,northgateps.com,,,45.77.63.86.vultrusercontent.com,"[""Domain: northgateps.com""]","[""152.114.57.24""]",152.114.57.24,Host DNS Mx record query of a non-trusted domain,152.114.57.24,"[""45.77.63.86""]",,dst,"[""not blocked""]",DNS Response,,inbound
+21/09/2023 12:55,vultrusercontent.com,,,,,,,,,,,,,,,
+21/09/2023 12:55,149.28.50.238.vultrusercontent.com,,,,,,,,,,,,,,,
+21/09/2023 12:55,mail-relay-asp-2.northgateps.com,,,149.28.50.238.vultrusercontent.com,"[""Domain: mail-relay-asp-2.northgateps.com""]","[""152.114.57.24""]",152.114.57.24,Host DNS Mx record query of a non-trusted domain,152.114.57.24,"[""149.28.50.238""]",,dst,"[""not blocked""]",DNS Response,,inbound
+21/09/2023 12:55,mail-relay-asp-2.northgateps.com,,,149.28.50.238.vultrusercontent.com,"[""Domain: mail-relay-asp-2.northgateps.com""]","[""152.114.57.24""]",152.114.57.24,Host DNS Mx record query of a non-trusted domain,152.114.57.24,"[""149.28.50.238""]",,dst,"[""not blocked""]",DNS Response,,inbound
+21/09/2023 11:46,vultrusercontent.com,,,,,,,,,,,,,,,
+21/09/2023 11:46,217.69.14.169.vultrusercontent.com,,,,,,,,,,,,,,,
+21/09/2023 11:46,northgateps.com,,,217.69.14.169.vultrusercontent.com,"[""Domain: northgateps.com""]","[""152.114.57.24""]",152.114.57.24,Host DNS Mx record query of a non-trusted domain,152.114.57.24,"[""217.69.14.169""]",,dst,"[""not blocked""]",DNS Response,,inbound
+21/09/2023 11:46,northgateps.com,,,217.69.14.169.vultrusercontent.com,"[""Domain: northgateps.com""]","[""152.114.57.24""]",152.114.57.24,Host DNS Mx record query of a non-trusted domain,152.114.57.24,"[""217.69.14.169""]",,dst,"[""not blocked""]",DNS Response,,inbound
+21/09/2023 05:55,vultrusercontent.com,,,,,,,,,,,,,,,
+21/09/2023 05:55,8.9.4.198.vultrusercontent.com,,,,,,,,,,,,,,,
+21/09/2023 05:55,mail.northgateps.com,,,8.9.4.198.vultrusercontent.com,"[""Domain: mail.northgateps.com""]","[""152.114.57.24""]",152.114.57.24,Host DNS Mx record query of a non-trusted domain,152.114.57.24,"[""8.9.4.198""]",,dst,"[""not blocked""]",DNS Response,,inbound
+21/09/2023 05:55,mail.northgateps.com,,,8.9.4.198.vultrusercontent.com,"[""Domain: mail.northgateps.com""]","[""152.114.57.24""]",152.114.57.24,Host DNS Mx record query of a non-trusted domain,152.114.57.24,"[""8.9.4.198""]",,dst,"[""not blocked""]",DNS Response,,inbound
+21/09/2023 03:25,vultrusercontent.com,,,,,,,,,,,,,,,
+21/09/2023 03:25,104.207.151.13.vultrusercontent.com,,,,,,,,,,,,,,,
+21/09/2023 03:25,download.webmin.com,,,192.168.2.81,"[""IP address: 104.207.151.13""]","[""104.207.151.13""]",104.207.151.13.vultrusercontent.com,Lets Encrypt Certificate - HTTPS (Response),104.207.151.13.vultrusercontent.com,"[""192.168.2.81""]",,dst,"[""not blocked""]",TLS,,inbound
+20/09/2023 04:52,45.76.69.64.vultrusercontent.com,10.102.82.213,41565,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+20/09/2023 04:52,vultrusercontent.com,10.9.8.7,35264,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+20/09/2023 04:52,vultrusercontent.com,10.9.8.7,35264,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+20/09/2023 04:52,45.76.69.64.vultrusercontent.com,10.102.82.213,41565,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+20/09/2023 04:52,45.76.69.64.vultrusercontent.com,10.9.8.7,61013,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+20/09/2023 04:52,45.76.69.64.vultrusercontent.com,10.9.8.7,61013,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+20/09/2023 04:52,vultrusercontent.com,,,,,,,,,,,,,,,
+20/09/2023 04:52,45.76.69.64.vultrusercontent.com,,,,,,,,,,,,,,,
+20/09/2023 04:52,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+20/09/2023 04:52,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+20/09/2023 04:52,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.220.220""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+20/09/2023 04:52,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+20/09/2023 04:52,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+20/09/2023 04:52,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+20/09/2023 04:52,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+20/09/2023 04:52,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.220.220""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+20/09/2023 04:52,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+19/09/2023 09:00,vultrusercontent.com,10.9.8.7,31349,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+19/09/2023 09:00,45.76.69.64.vultrusercontent.com,10.102.82.213,16918,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+19/09/2023 09:00,vultrusercontent.com,10.9.8.7,31349,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+19/09/2023 09:00,45.76.69.64.vultrusercontent.com,10.102.82.213,16918,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+19/09/2023 09:00,45.76.69.64.vultrusercontent.com,10.9.8.7,5523,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+19/09/2023 09:00,45.76.69.64.vultrusercontent.com,10.9.8.7,5523,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+19/09/2023 09:00,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+19/09/2023 09:00,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+19/09/2023 09:00,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+19/09/2023 09:00,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+19/09/2023 09:00,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+19/09/2023 09:00,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+19/09/2023 09:00,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+19/09/2023 09:00,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+19/09/2023 09:00,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+18/09/2023 15:51,45.76.69.64.vultrusercontent.com,10.102.82.213,42938,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+18/09/2023 15:51,45.76.69.64.vultrusercontent.com,10.102.82.213,42938,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+18/09/2023 15:51,vultrusercontent.com,10.9.8.7,8576,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+18/09/2023 15:51,vultrusercontent.com,10.9.8.7,8576,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+18/09/2023 15:51,45.76.69.64.vultrusercontent.com,10.9.8.7,43344,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+18/09/2023 15:51,45.76.69.64.vultrusercontent.com,10.9.8.7,43344,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+18/09/2023 15:51,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+18/09/2023 15:51,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+18/09/2023 15:51,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+18/09/2023 15:51,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+18/09/2023 15:51,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+18/09/2023 15:51,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+18/09/2023 15:51,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+18/09/2023 15:51,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+18/09/2023 15:51,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+17/09/2023 11:00,45.76.69.64.vultrusercontent.com,10.102.82.213,19088,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+17/09/2023 11:00,45.76.69.64.vultrusercontent.com,10.102.82.213,19088,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+17/09/2023 11:00,vultrusercontent.com,10.9.8.7,38886,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+17/09/2023 11:00,vultrusercontent.com,10.9.8.7,38886,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+17/09/2023 11:00,45.76.69.64.vultrusercontent.com,10.9.8.7,46926,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+17/09/2023 11:00,45.76.69.64.vultrusercontent.com,10.9.8.7,46926,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+17/09/2023 11:00,vultrusercontent.com,,,,,,,,,,,,,,,
+17/09/2023 11:00,45.76.69.64.vultrusercontent.com,,,,,,,,,,,,,,,
+17/09/2023 11:00,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+17/09/2023 11:00,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.220.220""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+17/09/2023 11:00,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+17/09/2023 11:00,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+17/09/2023 11:00,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+17/09/2023 11:00,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+17/09/2023 11:00,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+17/09/2023 11:00,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.220.220""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+17/09/2023 11:00,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+17/09/2023 00:21,149.248.51.128.vultrusercontent.com,10.102.82.213,42562,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+17/09/2023 00:21,149.248.51.128.vultrusercontent.com,10.102.82.213,42562,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+17/09/2023 00:21,vultrusercontent.com,10.9.8.7,16750,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+17/09/2023 00:21,vultrusercontent.com,10.9.8.7,16750,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+17/09/2023 00:21,149.248.51.128.vultrusercontent.com,10.9.8.7,53257,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+17/09/2023 00:21,149.248.51.128.vultrusercontent.com,10.9.8.7,53257,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+17/09/2023 00:21,149.248.51.128.vultrusercontent.com,,,,,,,,,,,,,,,
+17/09/2023 00:21,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.222.222""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+17/09/2023 00:21,149.248.51.128.vultrusercontent.com,,,152.114.57.124,"[""Domain: 149.248.51.128.vultrusercontent.com""]","[""208.67.222.222""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+17/09/2023 00:21,149.248.51.128.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 149.248.51.128.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+17/09/2023 00:21,149.248.51.128.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 149.248.51.128.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+17/09/2023 00:21,149.248.51.128.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 149.248.51.128.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+17/09/2023 00:21,149.248.51.128.vultrusercontent.com,,,152.114.57.124,"[""Domain: 149.248.51.128.vultrusercontent.com""]","[""208.67.222.222""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+17/09/2023 00:21,149.248.51.128.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 149.248.51.128.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+17/09/2023 00:21,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.222.222""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+17/09/2023 00:21,smtp.northgate-ispublicservices.com,,,149.248.51.128.vultrusercontent.com,"[""Domain: smtp.northgate-ispublicservices.com""]","[""152.114.57.24""]",152.114.57.24,Failed host DNS A record query of a non-trusted domain mail exchanger,152.114.57.24,"[""149.248.51.128""]",,dst,"[""not blocked""]",DNS Response,,inbound
+17/09/2023 00:21,smtp.northgate-ispublicservices.com,,,149.248.51.128.vultrusercontent.com,"[""Domain: smtp.northgate-ispublicservices.com""]","[""152.114.57.24""]",152.114.57.24,Failed host DNS A record query of a non-trusted domain mail exchanger,152.114.57.24,"[""149.248.51.128""]",,dst,"[""not blocked""]",DNS Response,,inbound
+16/09/2023 12:16,45.76.69.64.vultrusercontent.com,10.102.82.213,12097,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+16/09/2023 12:16,45.76.69.64.vultrusercontent.com,10.102.82.213,12097,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+16/09/2023 12:16,vultrusercontent.com,10.9.8.7,26233,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+16/09/2023 12:16,vultrusercontent.com,10.9.8.7,26233,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+16/09/2023 12:16,45.76.69.64.vultrusercontent.com,10.9.8.7,30190,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+16/09/2023 12:16,45.76.69.64.vultrusercontent.com,10.9.8.7,30190,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+16/09/2023 12:16,vultrusercontent.com,,,,,,,,,,,,,,,
+16/09/2023 12:16,45.76.69.64.vultrusercontent.com,,,,,,,,,,,,,,,
+16/09/2023 12:16,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+16/09/2023 12:16,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+16/09/2023 12:16,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+16/09/2023 12:16,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+16/09/2023 12:16,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+16/09/2023 12:16,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+16/09/2023 12:16,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+16/09/2023 12:16,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+16/09/2023 12:16,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+16/09/2023 05:27,vultrusercontent.com,,,,,,,,,,,,,,,
+16/09/2023 05:27,149.28.72.72.vultrusercontent.com,,,,,,,,,,,,,,,
+16/09/2023 05:27,lancspublicengagementtrn.northgateps.com,,,149.28.72.72.vultrusercontent.com,"[""Domain: lancspublicengagementtrn.northgateps.com""]","[""152.114.57.24""]",152.114.57.24,Host DNS Mx record query of a non-trusted domain,152.114.57.24,"[""149.28.72.72""]",,dst,"[""not blocked""]",DNS Response,,inbound
+16/09/2023 05:27,lancspublicengagementtrn.northgateps.com,,,149.28.72.72.vultrusercontent.com,"[""Domain: lancspublicengagementtrn.northgateps.com""]","[""152.114.57.24""]",152.114.57.24,Host DNS Mx record query of a non-trusted domain,152.114.57.24,"[""149.28.72.72""]",,dst,"[""not blocked""]",DNS Response,,inbound
+15/09/2023 03:27,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+14/09/2023 03:37,104.207.151.13.vultrusercontent.com,,,,,,,,,,,,,,,
+14/09/2023 03:37,download.webmin.com,,,192.168.2.81,"[""IP address: 104.207.151.13""]","[""104.207.151.13""]",104.207.151.13.vultrusercontent.com,Lets Encrypt Certificate - HTTPS (Response),104.207.151.13.vultrusercontent.com,"[""192.168.2.81""]",Windows,dst,"[""not blocked""]",TLS,,inbound
+13/09/2023 05:37,vultrusercontent.com,,,,,,,,,,,,,,,
+13/09/2023 05:37,45.76.69.64.vultrusercontent.com,,,,,,,,,,,,,,,
+13/09/2023 05:37,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+12/09/2023 16:57,139.84.166.122.vultrusercontent.com,,,,,,,,,,,,,,,
+12/09/2023 16:57,139.84.166.122.vultrusercontent.com,,,,,,,,,,,,,,,
+12/09/2023 16:57,,,,,,,,,,,,,,,,
+12/09/2023 16:56,vultrusercontent.com,,,,,,,,,,,,,,,
+12/09/2023 16:56,139.84.166.122.vultrusercontent.com,,,,,,,,,,,,,,,
+12/09/2023 16:51,vultrusercontent.com,,,,,,,,,,,,,,,
+12/09/2023 16:51,vultrusercontent.com,,,,,,,,,,,,,,,
+12/09/2023 16:51,,,,,,,,,,,,,,,,
+12/09/2023 16:50,139.84.166.122.vultrusercontent.com,,,,,,,,,,,,,,,
+12/09/2023 16:50,139.84.166.122.vultrusercontent.com,,,,,,,,,,,,,,,
+12/09/2023 16:50,,,,,,,,,,,,,,,,
+12/09/2023 12:40,,,,,,,,,,,,,,,,
+12/09/2023 12:40,1.0.0.127.in-addr.arpa.,,,,,,,,,,,,,,,
+12/09/2023 12:40,vultrusercontent.com,,,,,,,,,,,,,,,
+12/09/2023 12:40,vultrusercontent.com,,,,,,,,,,,,,,,
+12/09/2023 12:39,,,,,,,,,,,,,,,,
+12/09/2023 12:39,vultrusercontent.com,,,,,,,,,,,,,,,
+12/09/2023 12:39,vultrusercontent.com,,,,,,,,,,,,,,,
+12/09/2023 12:39,vultrusercontent.com,10.9.8.7,29128,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+12/09/2023 12:39,vultrusercontent.com,10.9.8.7,29128,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+12/09/2023 12:39,vultrusercontent.com,10.102.82.213,8013,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+12/09/2023 12:39,vultrusercontent.com,10.102.82.213,8013,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+12/09/2023 12:39,vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+12/09/2023 12:39,vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+12/09/2023 12:39,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+12/09/2023 12:39,vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+12/09/2023 12:39,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+12/09/2023 12:39,vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+12/09/2023 02:20,vultrusercontent.com,10.9.8.7,54175,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+12/09/2023 02:20,vultrusercontent.com,10.9.8.7,54175,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+12/09/2023 02:20,45.76.69.64.vultrusercontent.com,10.102.82.213,48206,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+12/09/2023 02:20,45.76.69.64.vultrusercontent.com,10.102.82.213,48206,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+12/09/2023 02:20,45.76.69.64.vultrusercontent.com,10.9.8.7,27235,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+12/09/2023 02:20,45.76.69.64.vultrusercontent.com,10.9.8.7,27235,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+12/09/2023 02:20,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+12/09/2023 02:20,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+12/09/2023 02:20,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+12/09/2023 02:20,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+12/09/2023 02:20,45.76.69.64.vultrusercontent.com,,,152.114.57.124,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""208.67.222.222""]",dns.opendns.com,DNS response resolves to dead IP address,dns.opendns.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+12/09/2023 02:20,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+12/09/2023 02:20,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+12/09/2023 02:20,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+12/09/2023 02:20,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""IP address: 10.102.82.213"", ""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.24""]",uk1-v-dc02.global.internal,Host DNS query to a non-trusted DNS server,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+11/09/2023 03:05,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+10/09/2023 16:46,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+09/09/2023 10:21,vultrusercontent.com,,,,,,,,,,,,,,,
+09/09/2023 10:21,45.76.69.64.vultrusercontent.com,,,,,,,,,,,,,,,
+09/09/2023 10:21,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+06/09/2023 11:26,45.76.69.64.vultrusercontent.com,10.102.82.213,50846,,,,,,,,,,,DNS,00-50-56-8b-4d-98,
+06/09/2023 11:26,45.76.69.64.vultrusercontent.com,10.102.82.213,54536,,,,,,,,,,,DNS,00-50-56-87-7a-69,
+06/09/2023 11:26,45.76.69.64.vultrusercontent.com,10.102.82.213,54536,,,,,,,,,,,DNS,00-50-56-87-7a-69,
+06/09/2023 11:26,45.76.69.64.vultrusercontent.com,10.102.82.213,50846,,,,,,,,,,,DNS,00-50-56-8b-4d-98,
+06/09/2023 11:26,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.25""]",10.102.123.25,DNS response resolves to dead IP address,10.102.123.25,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+06/09/2023 11:26,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.99""]",10.102.123.99,DNS response resolves to dead IP address,10.102.123.99,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+06/09/2023 11:26,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.25""]",10.102.123.25,DNS response resolves to dead IP address,10.102.123.25,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+06/09/2023 11:26,45.76.69.64.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""10.102.123.99""]",10.102.123.99,DNS response resolves to dead IP address,10.102.123.99,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+06/09/2023 11:26,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+05/09/2023 16:36,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+05/09/2023 14:20,207.246.98.187.vultrusercontent.com,10.102.82.213,55895,,,,,,,,,,,DNS,00-50-56-87-7a-69,
+05/09/2023 14:20,207.246.98.187.vultrusercontent.com,10.102.82.213,55895,,,,,,,,,,,DNS,00-50-56-87-7a-69,
+05/09/2023 14:20,207.246.98.187.vultrusercontent.com,10.102.82.213,19497,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+05/09/2023 14:20,vultrusercontent.com,10.9.8.7,32746,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+05/09/2023 14:20,207.246.98.187.vultrusercontent.com,10.102.82.213,19497,,,,,,,,,,,DNS,00-50-56-86-4a-f9,
+05/09/2023 14:20,vultrusercontent.com,10.9.8.7,32746,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+05/09/2023 14:20,207.246.98.187.vultrusercontent.com,10.9.8.7,64279,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+05/09/2023 14:20,207.246.98.187.vultrusercontent.com,10.9.8.7,64279,,,,,,,,,,,DNS,b4-0c-25-e0-40-4a,
+05/09/2023 14:20,vultrusercontent.com,,,,,,,,,,,,,,,
+05/09/2023 14:20,207.246.98.187.vultrusercontent.com,,,,,,,,,,,,,,,
+05/09/2023 14:20,207.246.98.187.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 207.246.98.187.vultrusercontent.com""]","[""10.102.123.99""]",10.102.123.99,DNS response resolves to dead IP address,10.102.123.99,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+05/09/2023 14:20,207.246.98.187.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 207.246.98.187.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+05/09/2023 14:20,207.246.98.187.vultrusercontent.com,,,152.114.57.124,"[""Domain: 207.246.98.187.vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+05/09/2023 14:20,207.246.98.187.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 207.246.98.187.vultrusercontent.com""]","[""10.102.123.99""]",10.102.123.99,DNS response resolves to dead IP address,10.102.123.99,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+05/09/2023 14:20,207.246.98.187.vultrusercontent.com,,,152.114.57.124,"[""Domain: 207.246.98.187.vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+05/09/2023 14:20,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+05/09/2023 14:20,207.246.98.187.vultrusercontent.com,,,uk1-v-dc02.global.internal,"[""Domain: 207.246.98.187.vultrusercontent.com""]","[""10.102.123.24""]",10.102.123.24,DNS response resolves to dead IP address,10.102.123.24,"[""10.102.82.213""]",,dst,"[""not blocked""]",DNS Response,,outbound
+05/09/2023 14:20,vultrusercontent.com,,,152.114.57.124,"[""Domain: vultrusercontent.com""]","[""208.67.220.220""]",dns.umbrella.com,DNS response resolves to dead IP address,dns.umbrella.com,"[""152.114.57.124""]",,dst,"[""not blocked""]",DNS Response,,inbound
+05/09/2023 10:12,45.76.69.64.vultrusercontent.com,172.29.100.157,43923,,,,,,,,,,,DNS,00-50-56-86-47-6f,
+05/09/2023 10:12,45.76.69.64.vultrusercontent.com,172.29.100.157,43923,,,,,,,,,,,DNS,00-50-56-86-47-6f,
+05/09/2023 10:12,,,,45.76.69.64.vultrusercontent.com,"[""IP address: 45.76.69.64""]","[""192.168.2.81""]",45.76.69.64.vultrusercontent.com,CVE-2014-0224 - Possible CCS Injection - TLS,192.168.2.81,"[""45.76.69.64""]",,src,"[""not blocked""]",TCP,,outbound
+05/09/2023 10:12,45.76.69.64.vultrusercontent.com,,,172.29.100.157,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""172.29.100.11""]",uk-mgmt-ad-1.mgmt.local,DNS response resolves to dead IP address,uk-mgmt-ad-1.mgmt.local,"[""172.29.100.157""]",,dst,"[""not blocked""]",DNS Response,,outbound
+05/09/2023 10:12,45.76.69.64.vultrusercontent.com,,,172.29.100.157,"[""Domain: 45.76.69.64.vultrusercontent.com""]","[""172.29.100.11""]",uk-mgmt-ad-1.mgmt.local,DNS response resolves to dead IP address,uk-mgmt-ad-1.mgmt.local,"[""172.29.100.157""]",,dst,"[""not blocked""]",DNS Response,,outbound

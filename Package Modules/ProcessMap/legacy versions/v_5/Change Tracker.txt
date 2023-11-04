@@ -1,0 +1,5 @@
+V1.1------------------------------------------------------------------------------------------------- 30/09/2023
+Updating if User is present but there is not information on ParentFilePath connect user to process Cmd instead
+
+V1------------------------------------------------------------------------------------------------- 30/09/2023
+Working OK

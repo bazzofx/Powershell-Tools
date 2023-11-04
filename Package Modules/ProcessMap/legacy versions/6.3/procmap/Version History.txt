@@ -1,0 +1,26 @@
+v6.2------------------------------------------------------- 19/10/2023
+Remove {-nouser| -n} command as it was not working as expected.
+Update the command to output fullPath unless when the {-s |-simple} switch is active
+Added more icons to the files (txt,js,psm1,images,macros)
+
+
+v6.0------------------------------------------------------- 13/10/2023
+Added the DrawIo.txt into the script itself
+Change the colours of -h command to grey
+
+v5.9-------------------------------------------------------04/10/2023
+Added new switch that will let use the -v or -verbose
+By default each cell on mindMap will have the last binary of the path
+-v or -verbose: Is used, the cell on the mindMap will have the full path of the file.
+This will create a bigger mind map but will show the full path at a glance.
+
+v5.8-------------------------------------------------------03/10/2023
+Added new switch -nouser
+-n or nouser : will skip the check if the row as an 'objectUser' header associated with it, this is useful for some reports.
+Default : script will skip records that do not have an user associated with it.
+For some reports which there is not a user associated with the line, we want to use this switch.
+v5.7-------------------------------------------------------
+If the report does not have an ObjectUser column or is blank we need to comment the line where it check if the colulmn exist 
+inside the generateTemp1 function
+
+

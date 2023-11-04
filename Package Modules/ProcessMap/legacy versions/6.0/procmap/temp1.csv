@@ -1,0 +1,4 @@
+"objectUser","parentFilePath","processFilePath","objectFilePath","processCmd","fill","stroke","shape","label","image","signed"
+"dad","parendCMD1","","","inTuneCheck","#ccffe6","#009900","ellipse","%objectUser%","https://cdn4.iconfinder.com/data/icons/mexican-curious-1/400/emojiDF_angry_comp-512.png","CyberSamurai"
+"parendCMD1","","child1","","","#ffe6ff","#d9d9d9","ellipse","%objectUser%","https://cdn2.iconfinder.com/data/icons/data-organization-and-management-7/64/vector_525_04-512.png","CyberSamurai"
+"child1","","","EXE1","inTuneCheck","#dae8fc","#6c8ebf","ellipse","%objectUser%<br>Signed:<i style=color:blue;>%signed%</i>","https://cdn-icons-png.flaticon.com/128/1949/1949225.png","CyberSamurai"

@@ -1,0 +1,25 @@
+## Habit Tracker UML use case diagram
+# label: ip:%label%<br>hostName:%hostName%<br><i style="color:gray;">DNS:%peerHost%</i><br>
+## style: shape=%shape%;rounded=1;fillColor=%fill%;strokeColor=%stroke%;
+# style: label;image=%image%;whiteSpace=wrap;html=1;rounded=1;fillColor=%fill%;strokeColor=%stroke%;
+# namespace: csvimport-
+##fromlabel + sourcelabel + label + tolabel + targetlabel
+# connect: {"from":"dst", "to":"source","invert": false,"fromlabel":"%connectionLegend%","sourcelabel":"%connectionLegend%", \
+#"style":"curved=0;endArrow=blockThin;endFill=3;"}
+# connect: {"from":"dst2", "to":"source","label":"%connectionLegend%", "style": \
+#             "curved=0;endArrow=blockThin;endFill=1;dashed=1;"}
+# connect: {"from":"dst3", "to":"source","sourcelabel":"%connectionLegend%",  "style": \
+#            "curved=0;endArrow=blockThin;endFill=1;dashed=1;"}
+# connect: {"from":"dst4", "to":"source","sourcelabel":"%connectionLegend%", "style": \
+#            "curved=0;endArrow=blockThin;endFill=1;dashed=1;"}
+# connect: {"from":"dst5", "to":"source","sourcelabel":"%connectionLegend%","targetlabel":"%connectionLegend%",  "style": \
+#            "curved=0;endArrow=blockThin;endFill=1;dashed=1;"}
+# wsourceth: auto
+# height: auto
+# padding: 40
+# ignore: source,shape,fill,stroke,dst
+# nodespacing: 40
+# levelspacing: 40
+# edgespacing: 40
+# layout: horizontalflow
+## CSV data starts below this line
