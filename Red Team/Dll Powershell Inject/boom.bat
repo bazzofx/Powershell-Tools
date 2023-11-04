@@ -1,0 +1,2 @@
+set__COMPAT_LAYER=RunAsInvoker
+start glas.exe

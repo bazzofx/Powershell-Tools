@@ -1,12 +1,16 @@
 ﻿# -------VALUES
-$wd = "C:\Users\Paulo.Bazzo\OneDrive - FitzRoy\Documents\FitzRoy\PowerShell\SquidFakeVirus"
+$wd = $PSScriptRoot
 # -----KEYS
 $minimizeSound = “HKCU:\AppEvents\Schemes\Apps\.Default\Minimize\.Current"
-
+function antidote {
+set-item -path $minimizeSound -Value ""
+}
 function debug{
 Get-item $minimizeSound
 }
-#se up sound
+
+
+
 
 function evil64 {
 # specify the base64 string
@@ -15,24 +19,22 @@ $base64String = "UklGRg7FCQBXQVZFZm10IBAAAAABAAIAgD4AAAB9AAACAAgATElTVOIAAABJTkZ
 $bytes = [System.Convert]::FromBase64String($base64String)
 
 # specify the output file path and name
-$evilFlle = Join-Path $wd "omg_base64.wav"
+
+
+
+$evilFile = Join-Path $wd "omg_base64.wav"
 
 # write the bytes to the output evilfile
 [System.IO.File]::WriteAllBytes($evilFile, $bytes)
 
-$e = Get-Item $evilFile
-return $e.FullName
+return $evilFile
+#$e = Get-Item $evilFile
+#return $e.FullName
 }
-
-
-function antidote {
-set-item -path $minimizeSound -Value ""
-}
-
 function squidGame($outputFilePath){
 set-item -path $minimizeSound -Value "$outputFilePath"
 }
 
-evil
 
 squidGame(evil64)
+#debug
