@@ -1,3 +1,8 @@
+v1.1(Published)-------------------------------------------
+Change the $wd to be $env:TEMP
+
+
+
 v6.2------------------------------------------------------- 19/10/2023
 Remove {-nouser| -n} command as it was not working as expected.
 Update the command to output fullPath unless when the {-s |-simple} switch is active

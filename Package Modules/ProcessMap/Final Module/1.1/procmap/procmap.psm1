@@ -1,5 +1,5 @@
 ﻿$ErrorActionPreference = "Stop"
-Write-Host "ProcMap Version v6.2 - Written by PB - a.ka cybersamurai.co.uk" -ForegroundColor Gray
+Write-Host "ProcMap Version v1.0 - Written by PB - a.ka cybersamurai.co.uk" -ForegroundColor Gray
 #-------------------------------------------- DRAW.IO SCRIPT-------------------------------------
 $global:drawioScript = @"
 ## Track Executables file from XDR Report like a BOSS!!!
@@ -53,8 +53,10 @@ $global:imageIcon = "https://cdn1.iconfinder.com/data/icons/multimedia-and-enter
 
 
 #--------------------------------------------------- GLOBAL VARIABLES -------------------------------------
-$scriptPath = $MyInvocation.MyCommand.Path
-$wd= [System.IO.Path]::GetDirectoryName($scriptPath) ##old version  "$wd ="C:\Users\user.name\OneDrive - NEC Software Solutions\Documents\Projects\Auto-Diagram\ProcessMap\v_04"
+#$scriptPath = $MyInvocation.MyCommand.Path
+#$wd= [System.IO.Path]::GetDirectoryName($scriptPath) ##old version  "$wd ="C:\Users\user.name\OneDrive - NEC Software Solutions\Documents\Projects\Auto-Diagram\ProcessMap\v_04"
+$wd = $env:TEMP
+
 
 $objectFilePathList = @()
 $dstList = @()
@@ -463,7 +465,7 @@ $data = Import-Csv $global:filePath
 if ($s -or $simple){generateTemp1 -simple}
 else{generateTemp1}
 
-                    Write-Host "[SUCCESS] Generating Temp1 file..." -ForegroundColor Gray
+                    Write-Host "[SUCCESS] Generating temp file..." -ForegroundColor Gray
                     Start-Sleep -Seconds 1
 
 mergeData 
@@ -482,7 +484,7 @@ mergeScriptData
                     Start-Sleep -Seconds 1
 
 Try{
-                    Write-Host "[ INFO ]  Deleting Temporary files.." -ForegroundColor Gray
+                    Write-Host "[SUCCESS]  Deleting Temporary files.." -ForegroundColor Gray
                     Start-Sleep -Seconds 1
     cleanUp 
                     Write-Host "[SUCCESS] Deleting Temporary files" -ForegroundColor Gray
