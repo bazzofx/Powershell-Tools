@@ -14,7 +14,7 @@ Art by Morfina                  Amidst the dice roll of a data leak....
                                   API by: https://cavalier.hudsonrock.com/docs
                                   Powershell by: Paulo bazzo - a.k.a CyberSamurai.co.uk
 @" 
-Write-Host "$art`n" -ForegroundColor Blue
+Write-Host "$art`n" -ForegroundColor Magenta
 Write-Host "Type the domain name you would like to check" -ForegroundColor Yellow
 $inputDomain = Read-Host "Domain name"
 $response  = fetch -domain $inputDomain
