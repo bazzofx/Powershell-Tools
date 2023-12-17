@@ -16,9 +16,7 @@ Art by Morfina                  Amidst the dice roll of a data leak....
 @" 
 Write-Host "$art`n" -ForegroundColor Magenta
 Write-Host "Type the domain name you would like to check" -ForegroundColor Yellow
-$inputDomain = Read-Host "Domain name"
-$response  = fetch -domain $inputDomain
-$statusCode = $response.StatusCode
+
 
 function fetch($domain){
 $url = 'https://cavalier.hudsonrock.com/api/json/v2/search-by-domain/discovery'
@@ -52,6 +50,9 @@ Write-Host "99     -      Close this application" -ForegroundColor Red
 function sorry {Write-Host "I understand, sometimes its easier to look the other way..."}
 
 function main{
+$inputDomain = Read-Host "Domain name"
+$response  = fetch -domain $inputDomain
+$statusCode = $response.StatusCode
 if($statusCode-eq "200"){
 printChoices
 $choice = Read-Host "Selection"
