@@ -57,14 +57,38 @@ Write-Host "File exported to $outFile" -ForegroundColor Yellow
 ###Import results and show it on screen
 Start-Sleep -Seconds 1
 #read file that we are able to ping on console that was just exported
-$log = Import-Csv $outfile | Where-Object {$_.Status -eq "Open"}
+$log = Import-Csv "C:\temp\outFile.csv" | Where-Object {$_.Status -eq "Open"}
 Write-Host "                Results from list - Servers with PORT:$port OPEN:          " -ForegroundColor Yellow
 $log
 }
 
-function Pinghunter{
+
+function help{
+Write-Host "-------------- GUIDE -----------------"  -ForegroundColor Gray
+Write-Host "To run this application first" -ForegroundColor Gray
+Write-Host "Create an input file on c:/ips.txt" -ForegroundColor Gray
+Write-Host "Add an IPV4 or IPv6 for each line and save the file as ips.txt" -ForegroundColor Gray
+Write-Host "run pingsweep again `n" -ForegroundColor Gray
+
+Write-Host "-f    -    Will perform a fast ping (2 pings instead of 4 pings [default]" -ForegroundColor Gray
+Write-Host "-h    -    Will print this help menu." -ForegroundColor Gray
+Write-Host""
+Write-Host "-Example:" -ForegroundColor Yellow
+Write-Host "pingsweep" -ForegroundColor Gray
+Write-Host "pingsweep -f" -ForegroundColor Gray
+Write-Host "--------------------------------------" -ForegroundColor Gray
+}
+function porthunter{
+param(
+[switch]$h = $false
+)
 $ErrorActionPreference = "Stop"
 Clear-Host
+
+if($h -eq $true){help}
+
+
+if($h -eq $false){
 Try{
 $inputFile = Get-Content "C:\temp\ips.txt"
 }#close try
@@ -74,7 +98,7 @@ Write-Host "[INFO] - Your input file should be saved on C:\temp\ips.txt - contai
 }
 if (-not $inputFile -or $inputFile.Count -eq 0){
     return
-}#close if
+
 
 else {
 Write-Host "[CHECK] -  Reading contens from C:/temp/ips.txt..." -ForegroundColor Gray
@@ -87,8 +111,12 @@ main
 
 
 }## close else
+}#close if
+
+
+}
+
+
 
 }#-close PingHunter
 
-
-Export-ModuleMember -Function pingHunter

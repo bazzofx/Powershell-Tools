@@ -78,19 +78,46 @@ Write-Host "                Results from Pinging                          " -For
 $log
 }
 
+function help{
+Write-Host "-------------- GUIDE -----------------"  -ForegroundColor Gray
+Write-Host "To run this application first" -ForegroundColor Gray
+Write-Host "Create an input file on c:/ips.txt" -ForegroundColor Gray
+Write-Host "Add an IPV4 or IPv6 for each line and save the file as ips.txt" -ForegroundColor Gray
+Write-Host "run pingsweep again `n" -ForegroundColor Gray
+
+Write-Host "-f    -    Will perform a fast ping (2 pings instead of 4 pings [default]" -ForegroundColor Gray
+Write-Host "-h    -    Will print this help menu." -ForegroundColor Gray
+Write-Host""
+Write-Host "-Example:" -ForegroundColor Yellow
+Write-Host "pingsweep" -ForegroundColor Gray
+Write-Host "pingsweep -f" -ForegroundColor Gray
+Write-Host "--------------------------------------" -ForegroundColor Gray
+}
+
 function Pingsweep{
 param(
-[switch]$f = $false 
+[switch]$f = $false,
+[switch]$h = $false
 )
+
 $ErrorActionPreference = "Stop"
 Clear-Host
+
+if($h -eq $true){help} #print help function
+
+if($h -eq $false) # -h flag was not called, perform check if input file is present
+{ 
 Try{
 $inputFile = Get-Content "C:\temp\ips.txt"
-}#close try
+}#close try 
 Catch{
 Write-Host "[ERROR] - Please make sure your inputFile is not empty and run the PingHunter again!" -ForegroundColor Red
 Write-Host "[INFO] - Your input file should be saved on C:\temp\ips.txt - containing one IPv4 or IPv6 per line."  -ForegroundColor Yellow
 }
+}
+
+
+
 if (-not $inputFile -or $inputFile.Count -eq 0){
     return
 }#close if
@@ -103,12 +130,10 @@ Start-Sleep -Seconds .5
 Write-Host "[STARTING] ping sweep with ICMP packets " -ForegroundColor Gray
 #running main function
 
-if ($f -eq $true)
-{main -f $true}
+if ($f -eq $true){main -f $true}
 
-else{
-main
-}
+
+else{main}
 
 
 
