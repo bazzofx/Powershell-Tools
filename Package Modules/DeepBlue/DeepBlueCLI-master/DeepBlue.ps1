@@ -218,7 +218,6 @@ function Main {
                 Else{
                     $failedlogons.Set_Item($username,1)
                     $totalfailedaccounts+=1
-                    Write-Host "im here..." -ForegroundColor Magenta
                 }
             }
             ElseIf($event.id -eq 4673){
@@ -729,7 +728,6 @@ function Create-Filter($file, $logname)
 
 
 function Check-Command(){
-
     Param($EventID)
 
     $text=""
@@ -737,6 +735,8 @@ function Check-Command(){
     # Check to see if command is safelisted
     foreach ($entry in $safelist) {
         if ($commandline -Match $entry.regex) {
+    #$matchRegex = $entry.regex
+    #Write-Host "$commandline [matching regex safelist] $matchRegex" -ForegroundColor Yellow #debug
             # Command is safelisted, return nothing
             return
         }
@@ -794,7 +794,7 @@ function Check-Command(){
 function Check-Regex($string,$type){
     $regextext="" # Local variable for return output
     foreach ($regex in $regexes){
-        if ($regex.Type -eq $type) { # Type is 0 for Commands, 1 for services. Set in regexes.csv
+        if ($regex.Type -eq $type) { # Type is 0 for Commands, 1 for services. Set in regexes.txt
             if ($string -Match $regex.regex) {
                $regextext += $regex.String + "`n"
             }

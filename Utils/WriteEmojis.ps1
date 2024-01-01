@@ -7,4 +7,6 @@ $EmojiIcon = [System.Convert]::toInt32("$hexValue",16)
  return $emoji
  }
  
- Write-Host "lovely day " -NoNewline; emoji 26A1 white red
+ #Write-Host "lovely day " -NoNewline; emoji 26A1 white red
+
+ emoji 0933 white red
