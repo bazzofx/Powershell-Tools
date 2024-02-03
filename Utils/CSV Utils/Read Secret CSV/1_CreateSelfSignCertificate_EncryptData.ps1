@@ -1,5 +1,6 @@
 ﻿#https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/protect-cmsmessage?view=powershell-7.4
-$testPath = "C:\Users\Joker\Documents\PBDocs\Github\Powershell-Tools\Utils\CSV Utils\Read Secret CSV\"
+$dataPath = "C:\Users\Joker\Documents\PBDocs\Github\Powershell-Tools\Utils\CSV Utils\Read Secret CSV\"
+$outCertPath= "C:\Users\Joker\Documents\PBDocs\Github\Powershell-Tools\Utils\CSV Utils\Read Secret CSV\outCert"
 $email = "paulo.bazzo@necsws.com"
 
 function createInfFile{
@@ -20,28 +21,26 @@ HashAlgorithm = Sha1
 Exportable = false
 RequestType = Cert
 KeyUsage = "CERT_KEY_ENCIPHERMENT_KEY_USAGE | CERT_DATA_ENCIPHERMENT_KEY_USAGE"
-#ValidityPeriod = "Years"
-#ValidityPeriodUnits = "1000"
-NotBefore = (Get-Date)
-NotAfter = (Get-Date).AddYears(50)
+ValidityPeriod = "Years"
+ValidityPeriodUnits = "100"
 FriendlyName = "Paulo Bazzo - Cyber Samurai"
 [Extensions]
 %szOID_ENHANCED_KEY_USAGE% = "{text}%szOID_DOCUMENT_ENCRYPTION%"
-} | Out-File -FilePath DocumentEncryption.inf
+} | Out-File -FilePath "$outCertPath\DocumentEncryption.inf"
 
     }
 function createCertificate{
-certreq.exe -new DocumentEncryption.inf DocumentEncryption.cer
+certreq.exe -new "$outCertPath\DocumentEncryption.inf" "$outCertPath\PauloBazzo.cer"
 }
 
-#createInfFile
-#createCertificate
+createInfFile
+createCertificate
 
 function EncryptSecret{
 
 # Data to be encrypted
 #$data = "Sensitive information to be encrypted"
-$data = Get-Content "$testPath\data.csv"
+$data = Get-Content "$dataPath\data.csv"
 # Convert the data to bytes
 
 #$dataBytes = [System.Text.Encoding]::UTF8.GetBytes($data)
@@ -52,4 +51,4 @@ $protectedData = Protect-CmsMessage -Content $data -To "*$email"
 return $protectedData
 }
 
-EncryptSecret > "$testPath\encryptedData.dat"
+EncryptSecret > "$outCertPath\encryptedData.dat"
