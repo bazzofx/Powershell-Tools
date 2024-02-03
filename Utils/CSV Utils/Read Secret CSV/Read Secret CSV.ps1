@@ -1,0 +1,1 @@
+﻿$data = Get-Content .\data.csv

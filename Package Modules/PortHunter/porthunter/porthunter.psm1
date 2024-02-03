@@ -76,6 +76,7 @@ Write-Host "File exported to $outFile" -ForegroundColor Yellow
 
 $global:arrayCSV = @()
 function portHunterCSV {
+Write-Host "The .csv file should have two headings, hostname,ip" -ForegroundColor Yellow -BackgroundColor Black
 createTempFolder
 $data = Import-Csv $global:filePath -Header "hostname","ip" | Select-Object -Skip 1
 Write-Host "Type the port number you would like to check if its open|closed?" -ForegroundColor Green
@@ -185,7 +186,8 @@ $extension = [regex]::Match($path, '\.[^.\\]+$').Value
 
 }
 
-porthunter
+
+Export-ModuleMember -Function porthunter
 
 
 

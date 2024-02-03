@@ -6,7 +6,7 @@ $date = Get-Date -Format dd-mm-yyyy
 $hour = Get-Date -Format HHmm
 $global:filePath = ""
 $global:tracker= @()
-$art = "@                                    PORT HUNTER~~
+$art = "@                                    PING HUNTER~~
                 /i
                 //,              *             *
   |            ///i 
@@ -137,8 +137,6 @@ $global:arrayCSV | Export-Csv $outfile -NoTypeInformation
 
 }
 
-#----------------------------------------------
-
 function OpenFile {
     $initialPath = Join-Path $env:USERPROFILE "Downloads"
     $FileDialogObject = [System.Windows.Forms.OpenFileDialog]
@@ -162,13 +160,15 @@ $testOutLocation = Test-Path "C:/temp"
 if($testOutLocation -eq $false){mkdir "C:/temp";Write-Host "'C:/temp' created" -ForegroundColor Gray}
 else{Write-Host "'C:/Temp' location already exist" -ForegroundColor Gray}
 }
-function porthunter {
+function Read {
+
 
     OpenFile
 $path = $global:filePath
 $extension = [regex]::Match($path, '\.[^.\\]+$').Value
 
     if ($path -ne "") {      
+        Write-Host "File extension selected is $extension"         #-debug
         
         switch($extension){
         ".txt" {portHunterTXT}
@@ -180,15 +180,11 @@ $extension = [regex]::Match($path, '\.[^.\\]+$').Value
     }#--close if
 
    else {
-        Write-Host "[WARNING] - Application terminated, no file selected." -ForegroundColor Yellow -BackgroundColor Black
+        Write-Host "No file selected."
     }
 
 }
 
-porthunter
-
-
-
-
+Read
 
 

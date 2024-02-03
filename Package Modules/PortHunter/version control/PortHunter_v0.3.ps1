@@ -169,6 +169,7 @@ $path = $global:filePath
 $extension = [regex]::Match($path, '\.[^.\\]+$').Value
 
     if ($path -ne "") {      
+        Write-Host "File extension selected is $extension"         #-debug
         
         switch($extension){
         ".txt" {portHunterTXT}
@@ -185,7 +186,8 @@ $extension = [regex]::Match($path, '\.[^.\\]+$').Value
 
 }
 
-porthunter
+
+Export-ModuleMember -Function porthunter
 
 
 
