@@ -1,0 +1,13 @@
+name: Publish Porthunter
+on: [workflow_dispatch]
+
+jobs:
+  build:
+  runs-on: unbutu-latest
+  steps:
+    - uses: actions/checkout@v1
+    - name: Publish
+    env:
+       APIKEY: ${{secrets.APIKEY}}
+      run: ./publish.ps1
+      shell: pwsh
