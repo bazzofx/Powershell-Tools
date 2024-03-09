@@ -1,4 +1,4 @@
-name: Publish
+name: Publish Porthunter
 on: [workflow_dispatch]
 
 jobs:
@@ -7,8 +7,8 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v1
-        - name: Publish
+        - name: Publish Porthunter
           env:
             APIKEY: ${{ secrets.APIKEY }}
-          run: .\publish.ps1
+          run: .\publishPorthunter.ps1
           shell: pwsh
