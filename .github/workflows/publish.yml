@@ -10,5 +10,5 @@ jobs:
         - name: Publish Porthunter
           env:
             APIKEY: ${{ secrets.APIKEY }}
-          run: ./.github/workflows/publishPorthunter.ps1
+          run: .\.github\workflows\publishPorthunter.ps1
           shell: pwsh
