@@ -27,6 +27,31 @@ $art = "@                                    PORT HUNTER~~
 Write-Host $art -ForegroundColor Magenta
 
 ##---------------------------------------
+##SUB FUNCTONS
+function OpenFile {
+    $initialPath = Join-Path $env:USERPROFILE "Downloads"
+    $FileDialogObject = [System.Windows.Forms.OpenFileDialog]
+
+    # Create Object and add properties
+    $OpenFileDialog = New-Object $FileDialogObject
+    $OpenFileDialog.InitialDirectory = $initialPath
+    $OpenFileDialog.CheckPathExists = $true
+    $OpenFileDialog.CheckFileExists = $true
+    $OpenFileDialog.Title = "Load a XDR Report that contains at least the headers 'dhost' and 'src'"
+    $OpenFileDialog.Filter = "Text files (*.txt)|*.txt|CSV files (*.csv)|*.csv"
+
+    $result = $OpenFileDialog.ShowDialog()
+
+    if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
+        $global:filePath = $OpenFileDialog.FileName
+    }
+}
+function createTempFolder{
+$testOutLocation = Test-Path "C:/temp"
+if($testOutLocation -eq $false){mkdir "C:/temp";Write-Host "'C:/temp' created" -ForegroundColor Gray}
+else{Write-Host "'C:/Temp' location already exist" -ForegroundColor Gray}
+}
+##---------------------------------------
 
 ##-FUNCTIONS
 ###----------- SEARCH BLOCKS
@@ -72,8 +97,6 @@ $array | Export-Csv $outfile -NoTypeInformation
 
 Write-Host "File exported to $outFile" -ForegroundColor Yellow
 }
-
-
 $global:arrayCSV = @()
 function portHunterCSV {
 createTempFolder
@@ -136,32 +159,9 @@ $global:arrayCSV | Export-Csv $outfile -NoTypeInformation
 
 
 }
-
 #----------------------------------------------
 
-function OpenFile {
-    $initialPath = Join-Path $env:USERPROFILE "Downloads"
-    $FileDialogObject = [System.Windows.Forms.OpenFileDialog]
-
-    # Create Object and add properties
-    $OpenFileDialog = New-Object $FileDialogObject
-    $OpenFileDialog.InitialDirectory = $initialPath
-    $OpenFileDialog.CheckPathExists = $true
-    $OpenFileDialog.CheckFileExists = $true
-    $OpenFileDialog.Title = "Load a XDR Report that contains at least the headers 'dhost' and 'src'"
-    $OpenFileDialog.Filter = "Text files (*.txt)|*.txt|CSV files (*.csv)|*.csv"
-
-    $result = $OpenFileDialog.ShowDialog()
-
-    if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
-        $global:filePath = $OpenFileDialog.FileName
-    }
-}
-function createTempFolder{
-$testOutLocation = Test-Path "C:/temp"
-if($testOutLocation -eq $false){mkdir "C:/temp";Write-Host "'C:/temp' created" -ForegroundColor Gray}
-else{Write-Host "'C:/Temp' location already exist" -ForegroundColor Gray}
-}
+# MAIN
 function porthunter {
 
     OpenFile

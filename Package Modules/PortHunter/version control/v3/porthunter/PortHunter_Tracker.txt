@@ -1,0 +1,15 @@
+0.3
+Detect duplicates on .TXT
+
+0.2
+Adding option to add file as parameter using -f
+
+Working CSV Import one record per line
+Working .CSV import multiple records per line
+Auto detect duplicate IPs on .CSV files
+Working .txt import one IP per line
+Audo detecting .TXT and .CSV files
+TCP Test connection, will work even if your server is blocking ICMP
+
+1.0
+Module port Hunter working from static file on .txt file on C:/temp
