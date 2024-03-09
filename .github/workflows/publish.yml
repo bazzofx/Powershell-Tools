@@ -9,6 +9,6 @@ jobs:
         - uses: actions/checkout@v1
         - name: Publish Porthunter
           env:
-            APIKEY: ${{ secrets.APIKEY }}
+            apiporthunter: ${{ secrets.apiporthunter }}
           run: .\.github\workflows\publishPorthunter.ps1
           shell: pwsh
