@@ -1,2 +1,2 @@
-$modulePath = "$PSScriptRoot\porthunter\"
-Publish-Module -path $modulePath -NuGetApiKey $env:apiporthunter
+$modulePath = "$PSScriptRoot"
+Publish-Module -path $modulePath -NuGetApiKey $Env:apiporthunter
