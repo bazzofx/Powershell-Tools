@@ -8,6 +8,6 @@ jobs:
     - uses: actions/checkout@v1
     - name: Publish
     env:
-       APIKEY: ${{secrets.APIKEY}}
+       APIKEY: ${{secrets.apiporthunter}}
       run: ./publish.ps1
       shell: pwsh
